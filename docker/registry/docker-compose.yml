@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry-data:/var/lib/registry
+    networks:
+      - registrynet
+  ui:
+    image: joxit/docker-registry-ui:static
+    ports:
+      - 8080:80
+    environment:
+      - REGISTRY_TITLE=Local Docker Registry
+      - REGISTRY_URL=http://registry:5000
+    depends_on:
+      - registry
+    networks:
+      - registrynet
+networks:
+  registrynet:

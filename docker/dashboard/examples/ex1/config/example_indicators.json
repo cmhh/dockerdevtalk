@@ -1,0 +1,116 @@
+[
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "Excel file example",
+    "source": "Name source here",
+    "plot_function": "get_time_series_plot",
+    "include_date_slider": true,
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Linear",
+            "units": "Number",
+            "title": "Linear plot"
+        },
+        {
+            "name": "Trigonmetric",
+            "units": "Number",
+            "title": "Trigonmetric plot"
+        }
+    ]
+  },
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "CSV file example",
+    "source": "Name source here",
+    "plot_function": "get_time_series_plot",
+    "include_date_slider": true,
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Linear",
+            "units": "Number",
+            "title": "Linear plot"
+        },
+        {
+            "name": "Trigonmetric",
+            "units": "Number",
+            "title": "Trigonmetric plot"
+        }
+    ]
+  },
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "CSV error bar example - from margin of error",
+    "source": "Name source here",
+    "plot_function": "get_unstacked_bar_chart_with_errors",
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Blah",
+            "units": "%",
+            "title": "Blah blah blah"
+        }
+    ]
+  },
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "CSV error bar example - from error bounds",
+    "source": "Name source here",
+    "plot_function": "get_unstacked_bar_chart_with_errors",
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Blah",
+            "units": "%",
+            "title": "Blah blah blah"
+        }
+    ]
+  },
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "Excel error bar example - from margin of error",
+    "source": "Name source here",
+    "plot_function": "get_unstacked_bar_chart_with_errors",
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Blah",
+            "units": "%",
+            "title": "Blah blah blah"
+        }
+    ]
+  },
+  {
+    "class": "Example",
+    "type": "Example type",
+    "indicator_name": "Excel error bar example - from error bounds",
+    "source": "Name source here",
+    "plot_function": "get_unstacked_bar_chart_with_errors",
+    "international": false,
+    "source_url":"https://www.stats.govt.nz/",
+    "download": true,
+    "groups": [
+        {
+            "name": "Blah",
+            "units": "%",
+            "title": "Blah blah blah"
+        }
+    ]
+  }
+]

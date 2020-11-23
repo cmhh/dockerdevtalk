@@ -1,0 +1,11 @@
+title: "API Example"
+production: true
+data_directory: data/
+indicator_definitions: "config/environmental_indicators.json"
+default_parameters:
+  data_type: "TimeSeries"
+  plot_function: "get_time_series_plot"
+  data_service: "load_from_store"
+primary_color: "#1E87E5"
+about_modal_html: "www/about_river_flow_example.html"
+download_modal_html: "www/download_modal_river_flow_example.html"

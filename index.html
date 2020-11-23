@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Docker</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/x-scss';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.scss';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Customised styling -->
+		<link rel="stylesheet" href="css/styles.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			<section data-background="media/bg.jpg" data-background-size="cover"  class="title shadow-black">
+				<h3>No Fuss Local Development and Analytics with</h3>
+			</section>
+			
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>What is Docker?</h3>
+				</section>
+				
+				<section>
+					<blockquote>A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</blockquote>
+				</section>
+				
+				<section>
+					<blockquote>...containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.</blockquote>
+				</section>
+					
+				<section>
+					<img src="media/docker-containerized-appliction-blue-border_2.png" style="height: 90%">
+				</section>
+					
+				<section>
+					<img src="media/container-vm-whatcontainer_2.png" style="height: 90%">
+				</section>
+					
+				<section>
+					<img src="media/docker-works-on-my-machine.jpg" style="height: 90%">
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Our Working Environment</h3>
+				</section>
+
+				<section>
+					<p>We assume a Windows 10 desktop with the following:</p>
+					<ul>
+						<li><b>Windows Subsystem for Linux 2</b> is enabled </li>
+						<li><b>Ubuntu 20.04</b> is installed for WSL2</li>
+						<li><b>Docker</b> is installed on Ubuntu 20.04</li>
+						<li><b>OpenSSH client</b> is enabled</li>
+						<li><b>Visual Studio Code</b> is installed</li>
+						<li><b>remote extensions</b> are installed for vscode</li>
+					</ul>
+				</section>
+					
+				<section>
+					<img src="media/dev.png" style="margin-top: 70px;">
+				</section>
+					
+				<section>
+					<img src="media/client.png" style="margin-top: 70px;">
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Containers as Developer Environments</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends \
+    openssh-server curl openjdk-8-jdk locales apt-transport-https gnupg2 git && \
+  sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8 && \
+  echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+  curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | apt-key add && \
+  apt-get update && apt-get install -y sbt && \
+  curl https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb --output packages-microsoft-prod.deb && \
+  dpkg -i packages-microsoft-prod.deb && \
+  apt-get update && apt-get install -y dotnet-sdk-5.0 && \
+  rm packages-microsoft-prod.deb && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* 
+
+  EXPOSE 22
+  
+  CMD mkdir -p /root/.ssh && \
+    echo $PUB_KEY >> /root/.ssh/authorized_keys && \
+    service ssh start && \
+    tail -f /dev/null</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t development .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm --name development \
+  -v $PWD/.ivy2:/root/.ivy2 \
+  -v $PWD/.cache:/root/.cache \
+  -v $PWD/.vscode-server:/root/.vscode-server \
+  -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
+  -p 23:22 \
+  development</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Deployment via Containers</h3>
+					<h3>Seasonal Adjustment as a Service</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV SHELL /bin/bash
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget && \
+  mkdir -p /tmp/x13 && \
+  cd /tmp/x13 && \
+  wget https://www.census.gov/ts/x13as/unix/x13ashtmlall_V1.1_B39.tar.gz && \
+  tar -xvf x13ashtmlall_V1.1_B39.tar.gz && \
+  mv x13ashtml /usr/bin/ && \
+  cd / && \
+  rm -fR /tmp/x13 && \
+  wget https://github.com/cmhh/seasadj/releases/download/0.1.0-SNAPSHOT/seasadj.jar && \
+  apt-get remove -y wget && \ 
+  apt-get autoremove -y && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* 
+
+EXPOSE 9001
+
+ENTRYPOINT ["java", "-cp", "/seasadj.jar", "org.cmhh.seasadj.Service"]</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t seasadj .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm --name seasadj \
+  -p 9001:9001 \
+  seasadj</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Deployment via Containers</h3>
+					<h3>IANZ as a Templated Web Application</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM ubuntu:20.04
+
+ARG ianz_version=1.0-SNAPSHOT
+ENV DEBIAN_FRONTEND noninteractive
+ENV SHELL /bin/bash
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget unzip locales && \
+  sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8 && \
+  wget https://github.com/cmhh/ianzpoc/releases/download/${ianz_version}/ianzpoc-${ianz_version}.zip && \
+  unzip ianzpoc-${ianz_version}.zip && \
+  mv ianzpoc-${ianz_version} ianz && \
+  rm ianzpoc-${ianz_version}.zip && \
+  apt-get remove -y wget unzip && \ 
+  apt-get autoremove -y && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* 
+
+ENV LC_ALL en_US.UTF-8
+
+EXPOSE 9000
+
+WORKDIR /ianz
+
+ENTRYPOINT ["bin/ianzpoc"]</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t ianz .</code>docker run -td --rm \
+  --name ianz \
+  -p 9000:9000 \
+  -v examples/ex1:/ianz/indicators \
+  ianz</pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim></code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Deployment via Containers</h3>
+					<h3>A Shiny Data Portal</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends \
+    curl locales git r-base r-base-dev libcurl4-openssl-dev libssl-dev libxml2-dev && \
+  sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8 && \
+  git clone https://github.com/StatisticsNZ/data_portal.git && \
+  R -e "install.packages(c('dplyr', 'configr', 'highcharter', 'shinyjs', \
+    'readxl', 'lubridate', 'tidyr', 'stringr', 'jsonlite', 'R6', 'httr', \
+    'data.table', 'shiny', 'shinycssloaders', 'foreach'), repos = 'https://cran.rstudio.com')" && \
+  apt-get remove -y git r-base-dev && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*  
+
+EXPOSE 3000
+
+CMD R -e "shiny::runApp('/data_portal', host = '0.0.0.0', port = 3000)"</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t dashboard .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm \
+  --name dashboard1 \
+  -v $PWD/ex1/config:/data_portal/config \
+  -v $PWD/ex1/data:/data_portal/data \
+  -v $PWD/ex1/www:/data_portal/www \
+  -p 3000:3000 \
+  dashboard</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Deployment via Containers</h3>
+					<h3>Deploying a Classifier</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive
+COPY app /app
+WORKDIR /app
+
+RUN apt-get update -y && \
+  apt-get install -y \
+    python3-pip python3-dev libglib2.0-dev libxrender-dev libxext-dev libsm6 && \ 
+  pip3 install -r requirements.txt
+
+EXPOSE 5000
+
+ENTRYPOINT [ "python3" ]
+
+CMD [ "app.py" ]</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t resnet .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm \
+  --name resnet \
+  -p 5000:5000 \
+  -v $PWD/model:/app/model \
+  resnet</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Databases in Containers</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM microsoft/mssql-server-linux
+WORKDIR /setup
+COPY ./setup .
+RUN chmod +x entrypoint.sh && chmod +x setup.sh
+CMD /bin/bash ./entrypoint.sh</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t advnetureworks .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm \
+  --name adventureworks \
+  -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=password-1234' \
+  -p 1433:1433 \
+  adventureworks</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Docker for Analytics</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>ARG ubuntu_version=20.04
+
+FROM ubuntu:$ubuntu_version
+
+ARG cores=12
+ARG r_version=4.0.3
+ARG rstudio_version=1.4.1032
+ENV DEBIAN_FRONTEND=noninteractive
+ENV SHELL=/bin/bash
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends \
+    gnupg2 dirmngr ca-certificates build-essential \
+    libcairo2-dev '^perl-modules-[0-9].[0-9]+$' \
+    libssl-dev libgit2-dev libcurl4-gnutls-dev libxml2-dev curl wget htop locales \
+    openjdk-8-jdk python3-pip git vim libudunits2-dev \
+    grass gdal-bin libgdal-dev libgeos-dev libproj-dev proj-bin proj-data \
+    libblas3 libatlas-base-dev liblapack-dev libreadline-dev gfortran \
+    libx11-dev libxt-dev zlib1g-dev libbz2-dev liblzma-dev libpcre2-dev \
+    sudo lsb-release gdebi-core psmisc libclang-dev libapparmor1 && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8 && \
+  wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh -s - --admin --no-path && \
+  mv /root/.TinyTeX /usr/local/TinyTex && \
+  /usr/local/TinyTex/bin/*/tlmgr path add && \
+  mkdir /src && \
+  cd /src && \
+  wget https://cran.r-project.org/src/base/R-$(echo $r_version | cut -d'.' -f 1)/R-${r_version}.tar.gz && \
+  tar -xvf R-${r_version}.tar.gz && \
+  cd /src/R-${r_version} && \
+  ./configure --enable-R-shlib --with-blas --with-lapack --enable-memory-profiling --with-cairo && \
+  make -j $cores && make install && \
+  ln -s /usr/local/lib/R/bin/R /usr/bin/R && \
+  ln -s /usr/local/lib/R/bin/Rscript /usr/bin/Rscript && \
+  cd / && rm -fR src && \
+  echo "local({\n  r <- getOption('repos')\n  r['CRAN'] <- 'https://cloud.r-project.org'\n  options(repos = r)\n})" > /usr/local/lib/R/etc/Rprofile.site && \
+  echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" > /usr/local/lib/R/etc/Renviron.site && \
+  R -e "install.packages('renv')" && \
+  wget https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-${rstudio_version}-amd64.deb && \
+  gdebi --non-interactive rstudio-server-${rstudio_version}-amd64.deb && \
+  rm rstudio-server-${rstudio_version}-amd64.deb
+  
+RUN adduser --disabled-password --gecos "" guest && \
+  usermod --password $(openssl passwd -1 guest) guest && \
+  usermod -aG sudo guest 
+
+EXPOSE 8787
+
+CMD service rstudio-server start && \
+  tail -f /dev/null</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build \
+  --build-arg r_version=3.6.3 \
+  -t rstudio:3.6.3 \
+  .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm --name rstudio \
+  -p 8787:8787 \
+  -v ${PWD}/.local:/guest/.local \
+  -v ${PWD}/work:/guest/work \
+  rstudio:3.6.3</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Working With a Registry</h3>
+				</section>
+
+				<section>
+					<code class="caption">docker-compose.yml</code>
+					<pre class="full-page"><code class="yaml" data-trim>version: "3.8"
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry-data:/var/lib/registry
+    networks:
+      - registrynet
+  ui:
+    image: joxit/docker-registry-ui:static
+    ports:
+      - 8080:80
+    environment:
+      - REGISTRY_TITLE=Local Docker Registry
+      - REGISTRY_URL=http://registry:5000
+    depends_on:
+      - registry
+    networks:
+      - registrynet
+networks:
+	registrynet:</code></pre>
+        </section>
+
+				<section>
+					<p>To start the registry and UI:</p>
+					<pre><code class=bash data-trim>docker-compose up -d .</code></pre>
+					<p>To stop:</p>
+					<pre><code class=bash data-trim>docker-compose down</code></pre>
+				</section>
+
+				<section>
+					<p>Consider the RStudio example earlier, and imagine it was refined to the point where the container was fit for production use.</p>
+					<p>A single team could add any number of tagged images to the registry for organisation-wide use.</p>
+					<p>The Dockerfile itself is placed in a git repository for transparency, with version tags added as appropriate.</p>
+				</section>
+
+				<section>
+					<p>To add an image to a repository, We first re-tag the target image:</p>
+					<pre><code class=bash data-trim>docker tag rstudio:ubuntu20.04-4.0.3 localhost:8080/rstudio:4.0.3</code></pre>
+					<p>and then push the tagged image:</p>
+					<pre><code class=bash data-trim>docker push localhost:8080/rstudio:4.0.3</code></pre>
+				</section>
+
+				<section>
+					<p>Any user in the organisation can then run the image by pulling it:</p>
+					<pre><code class=bash data-trim>docker pull localhost:8080/rstudio:4.0.3</code></pre>
+					<p>and then running it in the usual way:</p>
+					<pre><code class=bash data-trim>docker run -d --rm --name rstudio -p 8787:8787 localhost:8080/rstudio:4.0.3</code></pre>
+				</section>
+					
+				<section>
+					<img src="media/registryui.png" >
+				</section>
+			</section>
+			
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				width: 1000,
+				height: 750,
+				margin: 0,
+				hash: true,
+				center: false,
+				progress: true,
+				backgroundTransition: 'zoom',
+				transition: 'slide',
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

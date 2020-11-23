@@ -1,0 +1,9 @@
+**/.access^
+**/.local
+**/work
+**/.vscode-server
+**/.cache
+**/node_modules
+**/.npm
+**/registry-data
+**/.ivy2

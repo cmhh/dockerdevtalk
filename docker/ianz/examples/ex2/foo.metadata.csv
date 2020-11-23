@@ -1,0 +1,2 @@
+Indicator,Source,URL,Source_Agency,Date,Measurement_Type,Measure,ISO_Period,Frequency,Data_Available,Caveat
+Foo,Foo Bar Inc.,https://www.foo.bar,Foo Bar Inc.,31 September 2020,Count,Things,P1Y,Annually,Y,"Oh~Blah~Di"

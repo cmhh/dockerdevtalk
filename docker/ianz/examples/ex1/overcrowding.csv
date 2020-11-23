@@ -1,0 +1,904 @@
+"Period","Sex","Age_group","Ethnic_group","Regional_council","Level_of_crowding","Count"
+2001,"Female","Total","Total","Total","1 bedroom needed",122958
+2001,"Female","Total","Total","Total","1 bedroom spare",612447
+2001,"Female","Total","Total","Total","2+ bedrooms needed",56163
+2001,"Female","Total","Total","Total","2+ bedrooms spare",516039
+2001,"Female","Total","Total","Total","No extra bedrooms required",459234
+2001,"Female","Total","Total","Total","Total",1840050
+2001,"Female","Total","Total","Total","Unknown",73209
+2001,"Male","Total","Total","Total","1 bedroom needed",116505
+2001,"Male","Total","Total","Total","1 bedroom spare",572514
+2001,"Male","Total","Total","Total","2+ bedrooms needed",52728
+2001,"Male","Total","Total","Total","2+ bedrooms spare",503715
+2001,"Male","Total","Total","Total","No extra bedrooms required",439074
+2001,"Male","Total","Total","Total","Total",1754466
+2001,"Male","Total","Total","Total","Unknown",69927
+2001,"Total","0–4","Total","Total","1 bedroom needed",29688
+2001,"Total","0–4","Total","Total","1 bedroom spare",96354
+2001,"Total","0–4","Total","Total","2+ bedrooms needed",14715
+2001,"Total","0–4","Total","Total","2+ bedrooms spare",34461
+2001,"Total","0–4","Total","Total","No extra bedrooms required",83739
+2001,"Total","0–4","Total","Total","Total",267036
+2001,"Total","0–4","Total","Total","Unknown",8079
+2001,"Total","10–14","Total","Total","1 bedroom needed",27861
+2001,"Total","10–14","Total","Total","1 bedroom spare",100248
+2001,"Total","10–14","Total","Total","2+ bedrooms needed",13059
+2001,"Total","10–14","Total","Total","2+ bedrooms spare",42831
+2001,"Total","10–14","Total","Total","No extra bedrooms required",92469
+2001,"Total","10–14","Total","Total","Total",284643
+2001,"Total","10–14","Total","Total","Unknown",8178
+2001,"Total","15–19","Total","Total","1 bedroom needed",25320
+2001,"Total","15–19","Total","Total","1 bedroom spare",82944
+2001,"Total","15–19","Total","Total","2+ bedrooms needed",12603
+2001,"Total","15–19","Total","Total","2+ bedrooms spare",40290
+2001,"Total","15–19","Total","Total","No extra bedrooms required",80415
+2001,"Total","15–19","Total","Total","Total",250380
+2001,"Total","15–19","Total","Total","Unknown",8808
+2001,"Total","20–24","Total","Total","1 bedroom needed",22824
+2001,"Total","20–24","Total","Total","1 bedroom spare",68091
+2001,"Total","20–24","Total","Total","2+ bedrooms needed",11319
+2001,"Total","20–24","Total","Total","2+ bedrooms spare",34053
+2001,"Total","20–24","Total","Total","No extra bedrooms required",81279
+2001,"Total","20–24","Total","Total","Total",227523
+2001,"Total","20–24","Total","Total","Unknown",9957
+2001,"Total","25–29","Total","Total","1 bedroom needed",17316
+2001,"Total","25–29","Total","Total","1 bedroom spare",80133
+2001,"Total","25–29","Total","Total","2+ bedrooms needed",7749
+2001,"Total","25–29","Total","Total","2+ bedrooms spare",51510
+2001,"Total","25–29","Total","Total","No extra bedrooms required",70125
+2001,"Total","25–29","Total","Total","Total",237192
+2001,"Total","25–29","Total","Total","Unknown",10359
+2001,"Total","30–34","Total","Total","1 bedroom needed",17802
+2001,"Total","30–34","Total","Total","1 bedroom spare",96276
+2001,"Total","30–34","Total","Total","2+ bedrooms needed",7119
+2001,"Total","30–34","Total","Total","2+ bedrooms spare",61863
+2001,"Total","30–34","Total","Total","No extra bedrooms required",74241
+2001,"Total","30–34","Total","Total","Total",268743
+2001,"Total","30–34","Total","Total","Unknown",11448
+2001,"Total","35–39","Total","Total","1 bedroom needed",18348
+2001,"Total","35–39","Total","Total","1 bedroom spare",106548
+2001,"Total","35–39","Total","Total","2+ bedrooms needed",6765
+2001,"Total","35–39","Total","Total","2+ bedrooms spare",63699
+2001,"Total","35–39","Total","Total","No extra bedrooms required",81336
+2001,"Total","35–39","Total","Total","Total",288204
+2001,"Total","35–39","Total","Total","Unknown",11508
+2001,"Total","40–44","Total","Total","1 bedroom needed",15375
+2001,"Total","40–44","Total","Total","1 bedroom spare",103587
+2001,"Total","40–44","Total","Total","2+ bedrooms needed",5847
+2001,"Total","40–44","Total","Total","2+ bedrooms spare",71403
+2001,"Total","40–44","Total","Total","No extra bedrooms required",71427
+2001,"Total","40–44","Total","Total","Total",278700
+2001,"Total","40–44","Total","Total","Unknown",11058
+2001,"Total","45–49","Total","Total","1 bedroom needed",11028
+2001,"Total","45–49","Total","Total","1 bedroom spare",83547
+2001,"Total","45–49","Total","Total","2+ bedrooms needed",4560
+2001,"Total","45–49","Total","Total","2+ bedrooms spare",86628
+2001,"Total","45–49","Total","Total","No extra bedrooms required",50706
+2001,"Total","45–49","Total","Total","Total",246081
+2001,"Total","45–49","Total","Total","Unknown",9615
+2001,"Total","5–9","Total","Total","1 bedroom needed",32595
+2001,"Total","5–9","Total","Total","1 bedroom spare",92439
+2001,"Total","5–9","Total","Total","2+ bedrooms needed",14709
+2001,"Total","5–9","Total","Total","2+ bedrooms spare",33477
+2001,"Total","5–9","Total","Total","No extra bedrooms required",102678
+2001,"Total","5–9","Total","Total","Total",284184
+2001,"Total","5–9","Total","Total","Unknown",8283
+2001,"Total","50–54","Total","Total","1 bedroom needed",7212
+2001,"Total","50–54","Total","Total","1 bedroom spare",65562
+2001,"Total","50–54","Total","Total","2+ bedrooms needed",3315
+2001,"Total","50–54","Total","Total","2+ bedrooms spare",111381
+2001,"Total","50–54","Total","Total","No extra bedrooms required",33852
+2001,"Total","50–54","Total","Total","Total",230148
+2001,"Total","50–54","Total","Total","Unknown",8823
+2001,"Total","55–59","Total","Total","1 bedroom needed",4590
+2001,"Total","55–59","Total","Total","1 bedroom spare",43494
+2001,"Total","55–59","Total","Total","2+ bedrooms needed",2169
+2001,"Total","55–59","Total","Total","2+ bedrooms spare",99384
+2001,"Total","55–59","Total","Total","No extra bedrooms required",19650
+2001,"Total","55–59","Total","Total","Total",176286
+2001,"Total","55–59","Total","Total","Unknown",6996
+2001,"Total","60–64","Total","Total","1 bedroom needed",3570
+2001,"Total","60–64","Total","Total","1 bedroom spare",35343
+2001,"Total","60–64","Total","Total","2+ bedrooms needed",1878
+2001,"Total","60–64","Total","Total","2+ bedrooms spare",86367
+2001,"Total","60–64","Total","Total","No extra bedrooms required",14907
+2001,"Total","60–64","Total","Total","Total",148305
+2001,"Total","60–64","Total","Total","Unknown",6240
+2001,"Total","65–69","Total","Total","1 bedroom needed",2454
+2001,"Total","65–69","Total","Total","1 bedroom spare",30888
+2001,"Total","65–69","Total","Total","2+ bedrooms needed",1269
+2001,"Total","65–69","Total","Total","2+ bedrooms spare",69939
+2001,"Total","65–69","Total","Total","No extra bedrooms required",11457
+2001,"Total","65–69","Total","Total","Total",121383
+2001,"Total","65–69","Total","Total","Unknown",5373
+2001,"Total","70–74","Total","Total","1 bedroom needed",1662
+2001,"Total","70–74","Total","Total","1 bedroom spare",32844
+2001,"Total","70–74","Total","Total","2+ bedrooms needed",906
+2001,"Total","70–74","Total","Total","2+ bedrooms spare",60201
+2001,"Total","70–74","Total","Total","No extra bedrooms required",10224
+2001,"Total","70–74","Total","Total","Total",111558
+2001,"Total","70–74","Total","Total","Unknown",5727
+2001,"Total","75+","Total","Total","1 bedroom needed",1818
+2001,"Total","75+","Total","Total","1 bedroom spare",66669
+2001,"Total","75+","Total","Total","2+ bedrooms needed",912
+2001,"Total","75+","Total","Total","2+ bedrooms spare",72258
+2001,"Total","75+","Total","Total","No extra bedrooms required",19806
+2001,"Total","75+","Total","Total","Total",174147
+2001,"Total","75+","Total","Total","Unknown",12681
+2001,"Total","Total","Asian","Total","1 bedroom needed",32487
+2001,"Total","Total","Asian","Total","1 bedroom spare",63522
+2001,"Total","Total","Asian","Total","2+ bedrooms needed",12300
+2001,"Total","Total","Asian","Total","2+ bedrooms spare",37695
+2001,"Total","Total","Asian","Total","No extra bedrooms required",73815
+2001,"Total","Total","Asian","Total","Total",225324
+2001,"Total","Total","Asian","Total","Unknown",5505
+2001,"Total","Total","European","Total","1 bedroom needed",101370
+2001,"Total","Total","European","Total","1 bedroom spare",983973
+2001,"Total","Total","European","Total","2+ bedrooms needed",21654
+2001,"Total","Total","European","Total","2+ bedrooms spare",898404
+2001,"Total","Total","European","Total","No extra bedrooms required",646719
+2001,"Total","Total","European","Total","Total",2684844
+2001,"Total","Total","European","Total","Unknown",32724
+2001,"Total","Total","Māori","Total","1 bedroom needed",73263
+2001,"Total","Total","Māori","Total","1 bedroom spare",132537
+2001,"Total","Total","Māori","Total","2+ bedrooms needed",37158
+2001,"Total","Total","Māori","Total","2+ bedrooms spare",67329
+2001,"Total","Total","Māori","Total","No extra bedrooms required",162387
+2001,"Total","Total","Māori","Total","Total",485868
+2001,"Total","Total","Māori","Total","Unknown",13194
+2001,"Total","Total","MELAA","Total","1 bedroom needed",3807
+2001,"Total","Total","MELAA","Total","1 bedroom spare",5574
+2001,"Total","Total","MELAA","Total","2+ bedrooms needed",1683
+2001,"Total","Total","MELAA","Total","2+ bedrooms spare",2409
+2001,"Total","Total","MELAA","Total","No extra bedrooms required",8289
+2001,"Total","Total","MELAA","Total","Total",22503
+2001,"Total","Total","MELAA","Total","Unknown",738
+2001,"Total","Total","Not available","Total","1 bedroom needed",16767
+2001,"Total","Total","Not available","Total","1 bedroom spare",49983
+2001,"Total","Total","Not available","Total","2+ bedrooms needed",9945
+2001,"Total","Total","Not available","Total","2+ bedrooms spare",38271
+2001,"Total","Total","Not available","Total","No extra bedrooms required",43353
+2001,"Total","Total","Not available","Total","Total",244590
+2001,"Total","Total","Not available","Total","Unknown",86271
+2001,"Total","Total","Other","Total","1 bedroom needed",66
+2001,"Total","Total","Other","Total","1 bedroom spare",243
+2001,"Total","Total","Other","Total","2+ bedrooms needed",15
+2001,"Total","Total","Other","Total","2+ bedrooms spare",150
+2001,"Total","Total","Other","Total","No extra bedrooms required",243
+2001,"Total","Total","Other","Total","Total",732
+2001,"Total","Total","Other","Total","Unknown",18
+2001,"Total","Total","Pacific","Total","1 bedroom needed",48000
+2001,"Total","Total","Pacific","Total","1 bedroom spare",37371
+2001,"Total","Total","Pacific","Total","2+ bedrooms needed",40833
+2001,"Total","Total","Pacific","Total","2+ bedrooms spare",16719
+2001,"Total","Total","Pacific","Total","No extra bedrooms required",64641
+2001,"Total","Total","Pacific","Total","Total",217533
+2001,"Total","Total","Pacific","Total","Unknown",9969
+2001,"Total","Total","Total","Area Outside Region","1 bedroom needed",57
+2001,"Total","Total","Total","Area Outside Region","1 bedroom spare",213
+2001,"Total","Total","Total","Area Outside Region","2+ bedrooms needed",24
+2001,"Total","Total","Total","Area Outside Region","2+ bedrooms spare",174
+2001,"Total","Total","Total","Area Outside Region","No extra bedrooms required",129
+2001,"Total","Total","Total","Area Outside Region","Total",654
+2001,"Total","Total","Total","Area Outside Region","Unknown",57
+2001,"Total","Total","Total","Auckland Region","1 bedroom needed",102690
+2001,"Total","Total","Total","Auckland Region","1 bedroom spare",346065
+2001,"Total","Total","Total","Auckland Region","2+ bedrooms needed",60309
+2001,"Total","Total","Total","Auckland Region","2+ bedrooms spare",262944
+2001,"Total","Total","Total","Auckland Region","No extra bedrooms required",296181
+2001,"Total","Total","Total","Auckland Region","Total",1127640
+2001,"Total","Total","Total","Auckland Region","Unknown",59451
+2001,"Total","Total","Total","Bay of Plenty Region","1 bedroom needed",15561
+2001,"Total","Total","Total","Bay of Plenty Region","1 bedroom spare",72915
+2001,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms needed",7182
+2001,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms spare",70338
+2001,"Total","Total","Total","Bay of Plenty Region","No extra bedrooms required",53094
+2001,"Total","Total","Total","Bay of Plenty Region","Total",229371
+2001,"Total","Total","Total","Bay of Plenty Region","Unknown",10278
+2001,"Total","Total","Total","Canterbury Region","1 bedroom needed",18507
+2001,"Total","Total","Total","Canterbury Region","1 bedroom spare",171060
+2001,"Total","Total","Total","Canterbury Region","2+ bedrooms needed",4143
+2001,"Total","Total","Total","Canterbury Region","2+ bedrooms spare",143976
+2001,"Total","Total","Total","Canterbury Region","No extra bedrooms required",113292
+2001,"Total","Total","Total","Canterbury Region","Total",461820
+2001,"Total","Total","Total","Canterbury Region","Unknown",10845
+2001,"Total","Total","Total","Gisborne Region","1 bedroom needed",4014
+2001,"Total","Total","Total","Gisborne Region","1 bedroom spare",12273
+2001,"Total","Total","Total","Gisborne Region","2+ bedrooms needed",1836
+2001,"Total","Total","Total","Gisborne Region","2+ bedrooms spare",11388
+2001,"Total","Total","Total","Gisborne Region","No extra bedrooms required",10668
+2001,"Total","Total","Total","Gisborne Region","Total",41937
+2001,"Total","Total","Total","Gisborne Region","Unknown",1761
+2001,"Total","Total","Total","Hawke's Bay Region","1 bedroom needed",9504
+2001,"Total","Total","Total","Hawke's Bay Region","1 bedroom spare",44556
+2001,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms needed",4281
+2001,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms spare",40104
+2001,"Total","Total","Total","Hawke's Bay Region","No extra bedrooms required",32925
+2001,"Total","Total","Total","Hawke's Bay Region","Total",136773
+2001,"Total","Total","Total","Hawke's Bay Region","Unknown",5406
+2001,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom needed",10875
+2001,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom spare",70938
+2001,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms needed",3372
+2001,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms spare",66792
+2001,"Total","Total","Total","Manawatū-Whanganui Region","No extra bedrooms required",50586
+2001,"Total","Total","Total","Manawatū-Whanganui Region","Total",209373
+2001,"Total","Total","Total","Manawatū-Whanganui Region","Unknown",6810
+2001,"Total","Total","Total","Marlborough Region","1 bedroom needed",1542
+2001,"Total","Total","Total","Marlborough Region","1 bedroom spare",12585
+2001,"Total","Total","Total","Marlborough Region","2+ bedrooms needed",291
+2001,"Total","Total","Total","Marlborough Region","2+ bedrooms spare",13788
+2001,"Total","Total","Total","Marlborough Region","No extra bedrooms required",8067
+2001,"Total","Total","Total","Marlborough Region","Total",37416
+2001,"Total","Total","Total","Marlborough Region","Unknown",1140
+2001,"Total","Total","Total","Nelson Region","1 bedroom needed",1848
+2001,"Total","Total","Total","Nelson Region","1 bedroom spare",14142
+2001,"Total","Total","Total","Nelson Region","2+ bedrooms needed",435
+2001,"Total","Total","Total","Nelson Region","2+ bedrooms spare",11646
+2001,"Total","Total","Total","Nelson Region","No extra bedrooms required",10155
+2001,"Total","Total","Total","Nelson Region","Total",39390
+2001,"Total","Total","Total","Nelson Region","Unknown",1167
+2001,"Total","Total","Total","Northland Region","1 bedroom needed",9873
+2001,"Total","Total","Total","Northland Region","1 bedroom spare",39465
+2001,"Total","Total","Total","Northland Region","2+ bedrooms needed",4632
+2001,"Total","Total","Total","Northland Region","2+ bedrooms spare",39423
+2001,"Total","Total","Total","Northland Region","No extra bedrooms required",31476
+2001,"Total","Total","Total","Northland Region","Total",134358
+2001,"Total","Total","Total","Northland Region","Unknown",9495
+2001,"Total","Total","Total","Otago Region","1 bedroom needed",5934
+2001,"Total","Total","Total","Otago Region","1 bedroom spare",61038
+2001,"Total","Total","Total","Otago Region","2+ bedrooms needed",1056
+2001,"Total","Total","Total","Otago Region","2+ bedrooms spare",56928
+2001,"Total","Total","Total","Otago Region","No extra bedrooms required",42438
+2001,"Total","Total","Total","Otago Region","Total",171483
+2001,"Total","Total","Total","Otago Region","Unknown",4086
+2001,"Total","Total","Total","Southland Region","1 bedroom needed",2868
+2001,"Total","Total","Total","Southland Region","1 bedroom spare",31404
+2001,"Total","Total","Total","Southland Region","2+ bedrooms needed",651
+2001,"Total","Total","Total","Southland Region","2+ bedrooms spare",29733
+2001,"Total","Total","Total","Southland Region","No extra bedrooms required",20142
+2001,"Total","Total","Total","Southland Region","Total",86751
+2001,"Total","Total","Total","Southland Region","Unknown",1953
+2001,"Total","Total","Total","Taranaki Region","1 bedroom needed",4494
+2001,"Total","Total","Total","Taranaki Region","1 bedroom spare",34404
+2001,"Total","Total","Total","Taranaki Region","2+ bedrooms needed",1068
+2001,"Total","Total","Total","Taranaki Region","2+ bedrooms spare",32352
+2001,"Total","Total","Total","Taranaki Region","No extra bedrooms required",22914
+2001,"Total","Total","Total","Taranaki Region","Total",98124
+2001,"Total","Total","Total","Taranaki Region","Unknown",2889
+2001,"Total","Total","Total","Tasman Region","1 bedroom needed",1617
+2001,"Total","Total","Total","Tasman Region","1 bedroom spare",13317
+2001,"Total","Total","Total","Tasman Region","2+ bedrooms needed",432
+2001,"Total","Total","Total","Tasman Region","2+ bedrooms spare",13986
+2001,"Total","Total","Total","Tasman Region","No extra bedrooms required",8910
+2001,"Total","Total","Total","Tasman Region","Total",39711
+2001,"Total","Total","Total","Tasman Region","Unknown",1449
+2001,"Total","Total","Total","Total","1 bedroom needed",239463
+2001,"Total","Total","Total","Total","1 bedroom spare",1184961
+2001,"Total","Total","Total","Total","2+ bedrooms needed",108891
+2001,"Total","Total","Total","Total","2+ bedrooms spare",1019754
+2001,"Total","Total","Total","Total","No extra bedrooms required",898308
+2001,"Total","Total","Total","Total","Total",3594513
+2001,"Total","Total","Total","Total","Unknown",143133
+2001,"Total","Total","Total","Waikato Region","1 bedroom needed",22206
+2001,"Total","Total","Total","Waikato Region","1 bedroom spare",112479
+2001,"Total","Total","Total","Waikato Region","2+ bedrooms needed",8901
+2001,"Total","Total","Total","Waikato Region","2+ bedrooms spare",105132
+2001,"Total","Total","Total","Waikato Region","No extra bedrooms required",80844
+2001,"Total","Total","Total","Waikato Region","Total",341904
+2001,"Total","Total","Total","Waikato Region","Unknown",12342
+2001,"Total","Total","Total","Wellington Region","1 bedroom needed",26886
+2001,"Total","Total","Total","Wellington Region","1 bedroom spare",138426
+2001,"Total","Total","Total","Wellington Region","2+ bedrooms needed",10128
+2001,"Total","Total","Total","Wellington Region","2+ bedrooms spare",111609
+2001,"Total","Total","Total","Wellington Region","No extra bedrooms required",109716
+2001,"Total","Total","Total","Wellington Region","Total",409704
+2001,"Total","Total","Total","Wellington Region","Unknown",12936
+2001,"Total","Total","Total","West Coast Region","1 bedroom needed",990
+2001,"Total","Total","Total","West Coast Region","1 bedroom spare",9684
+2001,"Total","Total","Total","West Coast Region","2+ bedrooms needed",153
+2001,"Total","Total","Total","West Coast Region","2+ bedrooms spare",9444
+2001,"Total","Total","Total","West Coast Region","No extra bedrooms required",6771
+2001,"Total","Total","Total","West Coast Region","Total",28110
+2001,"Total","Total","Total","West Coast Region","Unknown",1068
+2006,"Female","Total","Total","Total","1 bedroom needed",132933
+2006,"Female","Total","Total","Total","1 bedroom spare",643389
+2006,"Female","Total","Total","Total","2+ bedrooms needed",67209
+2006,"Female","Total","Total","Total","2+ bedrooms spare",587985
+2006,"Female","Total","Total","Total","No extra bedrooms required",479301
+2006,"Female","Total","Total","Total","Total",1991607
+2006,"Female","Total","Total","Total","Unknown",80790
+2006,"Male","Total","Total","Total","1 bedroom needed",125607
+2006,"Male","Total","Total","Total","1 bedroom spare",603846
+2006,"Male","Total","Total","Total","2+ bedrooms needed",63882
+2006,"Male","Total","Total","Total","2+ bedrooms spare",572622
+2006,"Male","Total","Total","Total","No extra bedrooms required",460086
+2006,"Male","Total","Total","Total","Total",1903284
+2006,"Male","Total","Total","Total","Unknown",77238
+2006,"Total","0–4","Total","Total","1 bedroom needed",28743
+2006,"Total","0–4","Total","Total","1 bedroom spare",96828
+2006,"Total","0–4","Total","Total","2+ bedrooms needed",15522
+2006,"Total","0–4","Total","Total","2+ bedrooms spare",41556
+2006,"Total","0–4","Total","Total","No extra bedrooms required",79245
+2006,"Total","0–4","Total","Total","Total",272466
+2006,"Total","0–4","Total","Total","Unknown",10569
+2006,"Total","10–14","Total","Total","1 bedroom needed",29232
+2006,"Total","10–14","Total","Total","1 bedroom spare",103458
+2006,"Total","10–14","Total","Total","2+ bedrooms needed",15111
+2006,"Total","10–14","Total","Total","2+ bedrooms spare",48780
+2006,"Total","10–14","Total","Total","No extra bedrooms required",92664
+2006,"Total","10–14","Total","Total","Total",300714
+2006,"Total","10–14","Total","Total","Unknown",11469
+2006,"Total","15–19","Total","Total","1 bedroom needed",29337
+2006,"Total","15–19","Total","Total","1 bedroom spare",92697
+2006,"Total","15–19","Total","Total","2+ bedrooms needed",16500
+2006,"Total","15–19","Total","Total","2+ bedrooms spare",46857
+2006,"Total","15–19","Total","Total","No extra bedrooms required",89727
+2006,"Total","15–19","Total","Total","Total",286758
+2006,"Total","15–19","Total","Total","Unknown",11643
+2006,"Total","20–24","Total","Total","1 bedroom needed",27606
+2006,"Total","20–24","Total","Total","1 bedroom spare",73050
+2006,"Total","20–24","Total","Total","2+ bedrooms needed",15636
+2006,"Total","20–24","Total","Total","2+ bedrooms spare",38103
+2006,"Total","20–24","Total","Total","No extra bedrooms required",93486
+2006,"Total","20–24","Total","Total","Total",261402
+2006,"Total","20–24","Total","Total","Unknown",13524
+2006,"Total","25–29","Total","Total","1 bedroom needed",18591
+2006,"Total","25–29","Total","Total","1 bedroom spare",75393
+2006,"Total","25–29","Total","Total","2+ bedrooms needed",9816
+2006,"Total","25–29","Total","Total","2+ bedrooms spare",49740
+2006,"Total","25–29","Total","Total","No extra bedrooms required",70791
+2006,"Total","25–29","Total","Total","Total",235713
+2006,"Total","25–29","Total","Total","Unknown",11382
+2006,"Total","30–34","Total","Total","1 bedroom needed",17313
+2006,"Total","30–34","Total","Total","1 bedroom spare",95094
+2006,"Total","30–34","Total","Total","2+ bedrooms needed",7641
+2006,"Total","30–34","Total","Total","2+ bedrooms spare",65511
+2006,"Total","30–34","Total","Total","No extra bedrooms required",72075
+2006,"Total","30–34","Total","Total","Total",268860
+2006,"Total","30–34","Total","Total","Unknown",11226
+2006,"Total","35–39","Total","Total","1 bedroom needed",18219
+2006,"Total","35–39","Total","Total","1 bedroom spare",106515
+2006,"Total","35–39","Total","Total","2+ bedrooms needed",7506
+2006,"Total","35–39","Total","Total","2+ bedrooms spare",72282
+2006,"Total","35–39","Total","Total","No extra bedrooms required",77433
+2006,"Total","35–39","Total","Total","Total",293568
+2006,"Total","35–39","Total","Total","Unknown",11616
+2006,"Total","40–44","Total","Total","1 bedroom needed",17733
+2006,"Total","40–44","Total","Total","1 bedroom spare",111558
+2006,"Total","40–44","Total","Total","2+ bedrooms needed",7428
+2006,"Total","40–44","Total","Total","2+ bedrooms spare",81075
+2006,"Total","40–44","Total","Total","No extra bedrooms required",76941
+2006,"Total","40–44","Total","Total","Total",306300
+2006,"Total","40–44","Total","Total","Unknown",11565
+2006,"Total","45–49","Total","Total","1 bedroom needed",13587
+2006,"Total","45–49","Total","Total","1 bedroom spare",98109
+2006,"Total","45–49","Total","Total","2+ bedrooms needed",6282
+2006,"Total","45–49","Total","Total","2+ bedrooms spare",96654
+2006,"Total","45–49","Total","Total","No extra bedrooms required",61491
+2006,"Total","45–49","Total","Total","Total",286872
+2006,"Total","45–49","Total","Total","Unknown",10746
+2006,"Total","5–9","Total","Total","1 bedroom needed",31950
+2006,"Total","5–9","Total","Total","1 bedroom spare",92295
+2006,"Total","5–9","Total","Total","2+ bedrooms needed",16005
+2006,"Total","5–9","Total","Total","2+ bedrooms spare",38040
+2006,"Total","5–9","Total","Total","No extra bedrooms required",96555
+2006,"Total","5–9","Total","Total","Total",285687
+2006,"Total","5–9","Total","Total","Unknown",10842
+2006,"Total","50–54","Total","Total","1 bedroom needed",9231
+2006,"Total","50–54","Total","Total","1 bedroom spare",72138
+2006,"Total","50–54","Total","Total","2+ bedrooms needed",4557
+2006,"Total","50–54","Total","Total","2+ bedrooms spare",112518
+2006,"Total","50–54","Total","Total","No extra bedrooms required",39396
+2006,"Total","50–54","Total","Total","Total",246912
+2006,"Total","50–54","Total","Total","Unknown",9072
+2006,"Total","55–59","Total","Total","1 bedroom needed",5871
+2006,"Total","55–59","Total","Total","1 bedroom spare",55209
+2006,"Total","55–59","Total","Total","2+ bedrooms needed",3144
+2006,"Total","55–59","Total","Total","2+ bedrooms spare",128244
+2006,"Total","55–59","Total","Total","No extra bedrooms required",26304
+2006,"Total","55–59","Total","Total","Total",226980
+2006,"Total","55–59","Total","Total","Unknown",8208
+2006,"Total","60–64","Total","Total","1 bedroom needed",4080
+2006,"Total","60–64","Total","Total","1 bedroom spare",39357
+2006,"Total","60–64","Total","Total","2+ bedrooms needed",2085
+2006,"Total","60–64","Total","Total","2+ bedrooms spare",103938
+2006,"Total","60–64","Total","Total","No extra bedrooms required",17475
+2006,"Total","60–64","Total","Total","Total",173094
+2006,"Total","60–64","Total","Total","Unknown",6159
+2006,"Total","65–69","Total","Total","1 bedroom needed",3048
+2006,"Total","65–69","Total","Total","1 bedroom spare",33555
+2006,"Total","65–69","Total","Total","2+ bedrooms needed",1596
+2006,"Total","65–69","Total","Total","2+ bedrooms spare",84291
+2006,"Total","65–69","Total","Total","No extra bedrooms required",13806
+2006,"Total","65–69","Total","Total","Total",141615
+2006,"Total","65–69","Total","Total","Unknown",5319
+2006,"Total","70–74","Total","Total","1 bedroom needed",1878
+2006,"Total","70–74","Total","Total","1 bedroom spare",29889
+2006,"Total","70–74","Total","Total","2+ bedrooms needed",1062
+2006,"Total","70–74","Total","Total","2+ bedrooms spare",62769
+2006,"Total","70–74","Total","Total","No extra bedrooms required",10554
+2006,"Total","70–74","Total","Total","Total",110475
+2006,"Total","70–74","Total","Total","Unknown",4317
+2006,"Total","75+","Total","Total","1 bedroom needed",2112
+2006,"Total","75+","Total","Total","1 bedroom spare",72096
+2006,"Total","75+","Total","Total","2+ bedrooms needed",1206
+2006,"Total","75+","Total","Total","2+ bedrooms spare",90246
+2006,"Total","75+","Total","Total","No extra bedrooms required",21447
+2006,"Total","75+","Total","Total","Total",197475
+2006,"Total","75+","Total","Total","Unknown",10365
+2006,"Total","Total","Asian","Total","1 bedroom needed",47049
+2006,"Total","Total","Asian","Total","1 bedroom spare",93795
+2006,"Total","Total","Asian","Total","2+ bedrooms needed",18045
+2006,"Total","Total","Asian","Total","2+ bedrooms spare",60081
+2006,"Total","Total","Asian","Total","No extra bedrooms required",112872
+2006,"Total","Total","Asian","Total","Total",339420
+2006,"Total","Total","Asian","Total","Unknown",7575
+2006,"Total","Total","European","Total","1 bedroom needed",90762
+2006,"Total","Total","European","Total","1 bedroom spare",882240
+2006,"Total","Total","European","Total","2+ bedrooms needed",22935
+2006,"Total","Total","European","Total","2+ bedrooms spare",864468
+2006,"Total","Total","European","Total","No extra bedrooms required",565137
+2006,"Total","Total","European","Total","Total",2453457
+2006,"Total","Total","European","Total","Unknown",27918
+2006,"Total","Total","Māori","Total","1 bedroom needed",74604
+2006,"Total","Total","Māori","Total","1 bedroom spare",144519
+2006,"Total","Total","Māori","Total","2+ bedrooms needed",42405
+2006,"Total","Total","Māori","Total","2+ bedrooms spare",79860
+2006,"Total","Total","Māori","Total","No extra bedrooms required",172278
+2006,"Total","Total","Māori","Total","Total",528312
+2006,"Total","Total","Māori","Total","Unknown",14643
+2006,"Total","Total","MELAA","Total","1 bedroom needed",4941
+2006,"Total","Total","MELAA","Total","1 bedroom spare",8409
+2006,"Total","Total","MELAA","Total","2+ bedrooms needed",2436
+2006,"Total","Total","MELAA","Total","2+ bedrooms spare",3930
+2006,"Total","Total","MELAA","Total","No extra bedrooms required",12219
+2006,"Total","Total","MELAA","Total","Total",32973
+2006,"Total","Total","MELAA","Total","Unknown",1038
+2006,"Total","Total","Not available","Total","1 bedroom needed",17727
+2006,"Total","Total","Not available","Total","1 bedroom spare",46788
+2006,"Total","Total","Not available","Total","2+ bedrooms needed",12609
+2006,"Total","Total","Not available","Total","2+ bedrooms spare",37701
+2006,"Total","Total","Not available","Total","No extra bedrooms required",43347
+2006,"Total","Total","Not available","Total","Total",257688
+2006,"Total","Total","Not available","Total","Unknown",99519
+2006,"Total","Total","Other","Total","1 bedroom needed",10596
+2006,"Total","Total","Other","Total","1 bedroom spare",146556
+2006,"Total","Total","Other","Total","2+ bedrooms needed",2142
+2006,"Total","Total","Other","Total","2+ bedrooms spare",164862
+2006,"Total","Total","Other","Total","No extra bedrooms required",82401
+2006,"Total","Total","Other","Total","Total",409935
+2006,"Total","Total","Other","Total","Unknown",3378
+2006,"Total","Total","Pacific","Total","1 bedroom needed",54741
+2006,"Total","Total","Pacific","Total","1 bedroom spare",44394
+2006,"Total","Total","Pacific","Total","2+ bedrooms needed",48819
+2006,"Total","Total","Pacific","Total","2+ bedrooms spare",19869
+2006,"Total","Total","Pacific","Total","No extra bedrooms required",75243
+2006,"Total","Total","Pacific","Total","Total",253194
+2006,"Total","Total","Pacific","Total","Unknown",10134
+2006,"Total","Total","Total","Area Outside Region","1 bedroom needed",15
+2006,"Total","Total","Total","Area Outside Region","1 bedroom spare",177
+2006,"Total","Total","Total","Area Outside Region","2+ bedrooms needed",NA
+2006,"Total","Total","Total","Area Outside Region","2+ bedrooms spare",195
+2006,"Total","Total","Total","Area Outside Region","No extra bedrooms required",162
+2006,"Total","Total","Total","Area Outside Region","Total",588
+2006,"Total","Total","Total","Area Outside Region","Unknown",39
+2006,"Total","Total","Total","Auckland Region","1 bedroom needed",116892
+2006,"Total","Total","Total","Auckland Region","1 bedroom spare",377640
+2006,"Total","Total","Total","Auckland Region","2+ bedrooms needed",73182
+2006,"Total","Total","Total","Auckland Region","2+ bedrooms spare",311115
+2006,"Total","Total","Total","Auckland Region","No extra bedrooms required",331755
+2006,"Total","Total","Total","Auckland Region","Total",1274133
+2006,"Total","Total","Total","Auckland Region","Unknown",63549
+2006,"Total","Total","Total","Bay of Plenty Region","1 bedroom needed",16116
+2006,"Total","Total","Total","Bay of Plenty Region","1 bedroom spare",78102
+2006,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms needed",8478
+2006,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms spare",80661
+2006,"Total","Total","Total","Bay of Plenty Region","No extra bedrooms required",54102
+2006,"Total","Total","Total","Bay of Plenty Region","Total",248211
+2006,"Total","Total","Total","Bay of Plenty Region","Unknown",10752
+2006,"Total","Total","Total","Canterbury Region","1 bedroom needed",21201
+2006,"Total","Total","Total","Canterbury Region","1 bedroom spare",178662
+2006,"Total","Total","Total","Canterbury Region","2+ bedrooms needed",6285
+2006,"Total","Total","Total","Canterbury Region","2+ bedrooms spare",168720
+2006,"Total","Total","Total","Canterbury Region","No extra bedrooms required",118650
+2006,"Total","Total","Total","Canterbury Region","Total",505431
+2006,"Total","Total","Total","Canterbury Region","Unknown",11913
+2006,"Total","Total","Total","Gisborne Region","1 bedroom needed",4020
+2006,"Total","Total","Total","Gisborne Region","1 bedroom spare",12159
+2006,"Total","Total","Total","Gisborne Region","2+ bedrooms needed",2082
+2006,"Total","Total","Total","Gisborne Region","2+ bedrooms spare",11631
+2006,"Total","Total","Total","Gisborne Region","No extra bedrooms required",10215
+2006,"Total","Total","Total","Gisborne Region","Total",42747
+2006,"Total","Total","Total","Gisborne Region","Unknown",2637
+2006,"Total","Total","Total","Hawke's Bay Region","1 bedroom needed",9588
+2006,"Total","Total","Total","Hawke's Bay Region","1 bedroom spare",45384
+2006,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms needed",4761
+2006,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms spare",43425
+2006,"Total","Total","Total","Hawke's Bay Region","No extra bedrooms required",33462
+2006,"Total","Total","Total","Hawke's Bay Region","Total",142140
+2006,"Total","Total","Total","Hawke's Bay Region","Unknown",5517
+2006,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom needed",10737
+2006,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom spare",70239
+2006,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms needed",3801
+2006,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms spare",72816
+2006,"Total","Total","Total","Manawatū-Whanganui Region","No extra bedrooms required",48153
+2006,"Total","Total","Total","Manawatū-Whanganui Region","Total",212652
+2006,"Total","Total","Total","Manawatū-Whanganui Region","Unknown",6906
+2006,"Total","Total","Total","Marlborough Region","1 bedroom needed",1536
+2006,"Total","Total","Total","Marlborough Region","1 bedroom spare",12885
+2006,"Total","Total","Total","Marlborough Region","2+ bedrooms needed",564
+2006,"Total","Total","Total","Marlborough Region","2+ bedrooms spare",15681
+2006,"Total","Total","Total","Marlborough Region","No extra bedrooms required",7926
+2006,"Total","Total","Total","Marlborough Region","Total",40122
+2006,"Total","Total","Total","Marlborough Region","Unknown",1527
+2006,"Total","Total","Total","Nelson Region","1 bedroom needed",1665
+2006,"Total","Total","Total","Nelson Region","1 bedroom spare",15060
+2006,"Total","Total","Total","Nelson Region","2+ bedrooms needed",438
+2006,"Total","Total","Total","Nelson Region","2+ bedrooms spare",13029
+2006,"Total","Total","Total","Nelson Region","No extra bedrooms required",9900
+2006,"Total","Total","Total","Nelson Region","Total",41124
+2006,"Total","Total","Total","Nelson Region","Unknown",1029
+2006,"Total","Total","Total","Northland Region","1 bedroom needed",10134
+2006,"Total","Total","Total","Northland Region","1 bedroom spare",40830
+2006,"Total","Total","Total","Northland Region","2+ bedrooms needed",5547
+2006,"Total","Total","Total","Northland Region","2+ bedrooms spare",43707
+2006,"Total","Total","Total","Northland Region","No extra bedrooms required",31224
+2006,"Total","Total","Total","Northland Region","Total",142635
+2006,"Total","Total","Total","Northland Region","Unknown",11190
+2006,"Total","Total","Total","Otago Region","1 bedroom needed",6363
+2006,"Total","Total","Total","Otago Region","1 bedroom spare",63264
+2006,"Total","Total","Total","Otago Region","2+ bedrooms needed",1323
+2006,"Total","Total","Total","Otago Region","2+ bedrooms spare",62457
+2006,"Total","Total","Total","Otago Region","No extra bedrooms required",44253
+2006,"Total","Total","Total","Otago Region","Total",182757
+2006,"Total","Total","Total","Otago Region","Unknown",5097
+2006,"Total","Total","Total","Southland Region","1 bedroom needed",2787
+2006,"Total","Total","Total","Southland Region","1 bedroom spare",31374
+2006,"Total","Total","Total","Southland Region","2+ bedrooms needed",726
+2006,"Total","Total","Total","Southland Region","2+ bedrooms spare",31560
+2006,"Total","Total","Total","Southland Region","No extra bedrooms required",18447
+2006,"Total","Total","Total","Southland Region","Total",87138
+2006,"Total","Total","Total","Southland Region","Unknown",2244
+2006,"Total","Total","Total","Taranaki Region","1 bedroom needed",4560
+2006,"Total","Total","Total","Taranaki Region","1 bedroom spare",34311
+2006,"Total","Total","Total","Taranaki Region","2+ bedrooms needed",1308
+2006,"Total","Total","Total","Taranaki Region","2+ bedrooms spare",34878
+2006,"Total","Total","Total","Taranaki Region","No extra bedrooms required",21351
+2006,"Total","Total","Total","Taranaki Region","Total",99876
+2006,"Total","Total","Total","Taranaki Region","Unknown",3462
+2006,"Total","Total","Total","Tasman Region","1 bedroom needed",1557
+2006,"Total","Total","Total","Tasman Region","1 bedroom spare",14400
+2006,"Total","Total","Total","Tasman Region","2+ bedrooms needed",396
+2006,"Total","Total","Total","Tasman Region","2+ bedrooms spare",16371
+2006,"Total","Total","Total","Tasman Region","No extra bedrooms required",9015
+2006,"Total","Total","Total","Tasman Region","Total",42906
+2006,"Total","Total","Total","Tasman Region","Unknown",1161
+2006,"Total","Total","Total","Total","1 bedroom needed",258537
+2006,"Total","Total","Total","Total","1 bedroom spare",1247235
+2006,"Total","Total","Total","Total","2+ bedrooms needed",131094
+2006,"Total","Total","Total","Total","2+ bedrooms spare",1160604
+2006,"Total","Total","Total","Total","No extra bedrooms required",939387
+2006,"Total","Total","Total","Total","Total",3894891
+2006,"Total","Total","Total","Total","Unknown",158028
+2006,"Total","Total","Total","Waikato Region","1 bedroom needed",22938
+2006,"Total","Total","Total","Waikato Region","1 bedroom spare",116460
+2006,"Total","Total","Total","Waikato Region","2+ bedrooms needed",11019
+2006,"Total","Total","Total","Waikato Region","2+ bedrooms spare",119883
+2006,"Total","Total","Total","Waikato Region","No extra bedrooms required",81918
+2006,"Total","Total","Total","Waikato Region","Total",368196
+2006,"Total","Total","Total","Waikato Region","Unknown",15981
+2006,"Total","Total","Total","Wellington Region","1 bedroom needed",27453
+2006,"Total","Total","Total","Wellington Region","1 bedroom spare",146205
+2006,"Total","Total","Total","Wellington Region","2+ bedrooms needed",10974
+2006,"Total","Total","Total","Wellington Region","2+ bedrooms spare",124236
+2006,"Total","Total","Total","Wellington Region","No extra bedrooms required",112197
+2006,"Total","Total","Total","Wellington Region","Total",434997
+2006,"Total","Total","Total","Wellington Region","Unknown",13938
+2006,"Total","Total","Total","West Coast Region","1 bedroom needed",972
+2006,"Total","Total","Total","West Coast Region","1 bedroom spare",10083
+2006,"Total","Total","Total","West Coast Region","2+ bedrooms needed",201
+2006,"Total","Total","Total","West Coast Region","2+ bedrooms spare",10236
+2006,"Total","Total","Total","West Coast Region","No extra bedrooms required",6654
+2006,"Total","Total","Total","West Coast Region","Total",29235
+2006,"Total","Total","Total","West Coast Region","Unknown",1092
+2013,"Female","Total","Total","Total","1 bedroom needed",138636
+2013,"Female","Total","Total","Total","1 bedroom spare",661422
+2013,"Female","Total","Total","Total","2+ bedrooms needed",65571
+2013,"Female","Total","Total","Total","2+ bedrooms spare",658458
+2013,"Female","Total","Total","Total","No extra bedrooms required",493824
+2013,"Female","Total","Total","Total","Total",2117265
+2013,"Female","Total","Total","Total","Unknown",99354
+2013,"Male","Total","Total","Total","1 bedroom needed",130533
+2013,"Male","Total","Total","Total","1 bedroom spare",616179
+2013,"Male","Total","Total","Total","2+ bedrooms needed",63552
+2013,"Male","Total","Total","Total","2+ bedrooms spare",633666
+2013,"Male","Total","Total","Total","No extra bedrooms required",469260
+2013,"Male","Total","Total","Total","Total",2010210
+2013,"Male","Total","Total","Total","Unknown",97017
+2013,"Total","0–4","Total","Total","1 bedroom needed",30147
+2013,"Total","0–4","Total","Total","1 bedroom spare",103686
+2013,"Total","0–4","Total","Total","2+ bedrooms needed",14949
+2013,"Total","0–4","Total","Total","2+ bedrooms spare",44046
+2013,"Total","0–4","Total","Total","No extra bedrooms required",85587
+2013,"Total","0–4","Total","Total","Total",291858
+2013,"Total","0–4","Total","Total","Unknown",13440
+2013,"Total","10–14","Total","Total","1 bedroom needed",27411
+2013,"Total","10–14","Total","Total","1 bedroom spare",97041
+2013,"Total","10–14","Total","Total","2+ bedrooms needed",13362
+2013,"Total","10–14","Total","Total","2+ bedrooms spare",50436
+2013,"Total","10–14","Total","Total","No extra bedrooms required",83700
+2013,"Total","10–14","Total","Total","Total",284388
+2013,"Total","10–14","Total","Total","Unknown",12444
+2013,"Total","15–19","Total","Total","1 bedroom needed",29073
+2013,"Total","15–19","Total","Total","1 bedroom spare",88191
+2013,"Total","15–19","Total","Total","2+ bedrooms needed",15738
+2013,"Total","15–19","Total","Total","2+ bedrooms spare",48804
+2013,"Total","15–19","Total","Total","No extra bedrooms required",86289
+2013,"Total","15–19","Total","Total","Total",282288
+2013,"Total","15–19","Total","Total","Unknown",14196
+2013,"Total","20–24","Total","Total","1 bedroom needed",30654
+2013,"Total","20–24","Total","Total","1 bedroom spare",76554
+2013,"Total","20–24","Total","Total","2+ bedrooms needed",17733
+2013,"Total","20–24","Total","Total","2+ bedrooms spare",42681
+2013,"Total","20–24","Total","Total","No extra bedrooms required",97740
+2013,"Total","20–24","Total","Total","Total",282261
+2013,"Total","20–24","Total","Total","Unknown",16890
+2013,"Total","25–29","Total","Total","1 bedroom needed",20895
+2013,"Total","25–29","Total","Total","1 bedroom spare",77670
+2013,"Total","25–29","Total","Total","2+ bedrooms needed",10755
+2013,"Total","25–29","Total","Total","2+ bedrooms spare",52098
+2013,"Total","25–29","Total","Total","No extra bedrooms required",76251
+2013,"Total","25–29","Total","Total","Total",252051
+2013,"Total","25–29","Total","Total","Unknown",14385
+2013,"Total","30–34","Total","Total","1 bedroom needed",17805
+2013,"Total","30–34","Total","Total","1 bedroom spare",86337
+2013,"Total","30–34","Total","Total","2+ bedrooms needed",7182
+2013,"Total","30–34","Total","Total","2+ bedrooms spare",57732
+2013,"Total","30–34","Total","Total","No extra bedrooms required",69540
+2013,"Total","30–34","Total","Total","Total",251361
+2013,"Total","30–34","Total","Total","Unknown",12762
+2013,"Total","35–39","Total","Total","1 bedroom needed",16731
+2013,"Total","35–39","Total","Total","1 bedroom spare",94389
+2013,"Total","35–39","Total","Total","2+ bedrooms needed",6177
+2013,"Total","35–39","Total","Total","2+ bedrooms spare",62577
+2013,"Total","35–39","Total","Total","No extra bedrooms required",70203
+2013,"Total","35–39","Total","Total","Total",262266
+2013,"Total","35–39","Total","Total","Unknown",12189
+2013,"Total","40–44","Total","Total","1 bedroom needed",17148
+2013,"Total","40–44","Total","Total","1 bedroom spare",108210
+2013,"Total","40–44","Total","Total","2+ bedrooms needed",6948
+2013,"Total","40–44","Total","Total","2+ bedrooms spare",80355
+2013,"Total","40–44","Total","Total","No extra bedrooms required",74034
+2013,"Total","40–44","Total","Total","Total",300357
+2013,"Total","40–44","Total","Total","Unknown",13662
+2013,"Total","45–49","Total","Total","1 bedroom needed",14781
+2013,"Total","45–49","Total","Total","1 bedroom spare",100800
+2013,"Total","45–49","Total","Total","2+ bedrooms needed",6387
+2013,"Total","45–49","Total","Total","2+ bedrooms spare",97482
+2013,"Total","45–49","Total","Total","No extra bedrooms required",63429
+2013,"Total","45–49","Total","Total","Total",296307
+2013,"Total","45–49","Total","Total","Unknown",13425
+2013,"Total","5–9","Total","Total","1 bedroom needed",30816
+2013,"Total","5–9","Total","Total","1 bedroom spare",93831
+2013,"Total","5–9","Total","Total","2+ bedrooms needed",14319
+2013,"Total","5–9","Total","Total","2+ bedrooms spare",42330
+2013,"Total","5–9","Total","Total","No extra bedrooms required",93945
+2013,"Total","5–9","Total","Total","Total",288039
+2013,"Total","5–9","Total","Total","Unknown",12798
+2013,"Total","50–54","Total","Total","1 bedroom needed",11799
+2013,"Total","50–54","Total","Total","1 bedroom spare",86901
+2013,"Total","50–54","Total","Total","2+ bedrooms needed",5256
+2013,"Total","50–54","Total","Total","2+ bedrooms spare",126399
+2013,"Total","50–54","Total","Total","No extra bedrooms required",50682
+2013,"Total","50–54","Total","Total","Total",294405
+2013,"Total","50–54","Total","Total","Unknown",13368
+2013,"Total","55–59","Total","Total","1 bedroom needed",7767
+2013,"Total","55–59","Total","Total","1 bedroom spare",62547
+2013,"Total","55–59","Total","Total","2+ bedrooms needed",3675
+2013,"Total","55–59","Total","Total","2+ bedrooms spare",135540
+2013,"Total","55–59","Total","Total","No extra bedrooms required",33750
+2013,"Total","55–59","Total","Total","Total",254688
+2013,"Total","55–59","Total","Total","Unknown",11409
+2013,"Total","60–64","Total","Total","1 bedroom needed",5406
+2013,"Total","60–64","Total","Total","1 bedroom spare",49836
+2013,"Total","60–64","Total","Total","2+ bedrooms needed",2514
+2013,"Total","60–64","Total","Total","2+ bedrooms spare",135063
+2013,"Total","60–64","Total","Total","No extra bedrooms required",24273
+2013,"Total","60–64","Total","Total","Total",227076
+2013,"Total","60–64","Total","Total","Unknown",9984
+2013,"Total","65–69","Total","Total","1 bedroom needed",3510
+2013,"Total","65–69","Total","Total","1 bedroom spare",41139
+2013,"Total","65–69","Total","Total","2+ bedrooms needed",1695
+2013,"Total","65–69","Total","Total","2+ bedrooms spare",116508
+2013,"Total","65–69","Total","Total","No extra bedrooms required",17667
+2013,"Total","65–69","Total","Total","Total",188604
+2013,"Total","65–69","Total","Total","Unknown",8088
+2013,"Total","70–74","Total","Total","1 bedroom needed",2418
+2013,"Total","70–74","Total","Total","1 bedroom spare",34311
+2013,"Total","70–74","Total","Total","2+ bedrooms needed",1122
+2013,"Total","70–74","Total","Total","2+ bedrooms spare",86148
+2013,"Total","70–74","Total","Total","No extra bedrooms required",13218
+2013,"Total","70–74","Total","Total","Total",143451
+2013,"Total","70–74","Total","Total","Unknown",6231
+2013,"Total","75+","Total","Total","1 bedroom needed",2817
+2013,"Total","75+","Total","Total","1 bedroom spare",76158
+2013,"Total","75+","Total","Total","2+ bedrooms needed",1311
+2013,"Total","75+","Total","Total","2+ bedrooms spare",113919
+2013,"Total","75+","Total","Total","No extra bedrooms required",22773
+2013,"Total","75+","Total","Total","Total",228081
+2013,"Total","75+","Total","Total","Unknown",11103
+2013,"Total","Total","Asian","Total","1 bedroom needed",59838
+2013,"Total","Total","Asian","Total","1 bedroom spare",128049
+2013,"Total","Total","Asian","Total","2+ bedrooms needed",22302
+2013,"Total","Total","Asian","Total","2+ bedrooms spare",92355
+2013,"Total","Total","Asian","Total","No extra bedrooms required",144951
+2013,"Total","Total","Asian","Total","Total",457314
+2013,"Total","Total","Asian","Total","Unknown",9816
+2013,"Total","Total","European","Total","1 bedroom needed",95760
+2013,"Total","Total","European","Total","1 bedroom spare",984510
+2013,"Total","Total","European","Total","2+ bedrooms needed",23682
+2013,"Total","Total","European","Total","2+ bedrooms spare",1079094
+2013,"Total","Total","European","Total","No extra bedrooms required",612174
+2013,"Total","Total","European","Total","Total",2821353
+2013,"Total","Total","European","Total","Unknown",26127
+2013,"Total","Total","Māori","Total","1 bedroom needed",72969
+2013,"Total","Total","Māori","Total","1 bedroom spare",164781
+2013,"Total","Total","Māori","Total","2+ bedrooms needed",37971
+2013,"Total","Total","Māori","Total","2+ bedrooms spare",99003
+2013,"Total","Total","Māori","Total","No extra bedrooms required",181044
+2013,"Total","Total","Māori","Total","Total",568584
+2013,"Total","Total","Māori","Total","Unknown",12819
+2013,"Total","Total","MELAA","Total","1 bedroom needed",5643
+2013,"Total","Total","MELAA","Total","1 bedroom spare",12378
+2013,"Total","Total","MELAA","Total","2+ bedrooms needed",2061
+2013,"Total","Total","MELAA","Total","2+ bedrooms spare",6765
+2013,"Total","Total","MELAA","Total","No extra bedrooms required",16854
+2013,"Total","Total","MELAA","Total","Total",45087
+2013,"Total","Total","MELAA","Total","Unknown",1389
+2013,"Total","Total","Not available","Total","1 bedroom needed",19638
+2013,"Total","Total","Not available","Total","1 bedroom spare",47163
+2013,"Total","Total","Not available","Total","2+ bedrooms needed",12975
+2013,"Total","Total","Not available","Total","2+ bedrooms spare",39660
+2013,"Total","Total","Not available","Total","No extra bedrooms required",46695
+2013,"Total","Total","Not available","Total","Total",306993
+2013,"Total","Total","Not available","Total","Unknown",140859
+2013,"Total","Total","Other","Total","1 bedroom needed",2109
+2013,"Total","Total","Other","Total","1 bedroom spare",21789
+2013,"Total","Total","Other","Total","2+ bedrooms needed",528
+2013,"Total","Total","Other","Total","2+ bedrooms spare",25713
+2013,"Total","Total","Other","Total","No extra bedrooms required",14223
+2013,"Total","Total","Other","Total","Total",65007
+2013,"Total","Total","Other","Total","Unknown",645
+2013,"Total","Total","Pacific","Total","1 bedroom needed",59169
+2013,"Total","Total","Pacific","Total","1 bedroom spare",53091
+2013,"Total","Total","Pacific","Total","2+ bedrooms needed",49494
+2013,"Total","Total","Pacific","Total","2+ bedrooms spare",24993
+2013,"Total","Total","Pacific","Total","No extra bedrooms required",86442
+2013,"Total","Total","Pacific","Total","Total",284454
+2013,"Total","Total","Pacific","Total","Unknown",11268
+2013,"Total","Total","Total","Area Outside Region","1 bedroom needed",33
+2013,"Total","Total","Total","Area Outside Region","1 bedroom spare",174
+2013,"Total","Total","Total","Area Outside Region","2+ bedrooms needed",12
+2013,"Total","Total","Total","Area Outside Region","2+ bedrooms spare",195
+2013,"Total","Total","Total","Area Outside Region","No extra bedrooms required",150
+2013,"Total","Total","Total","Area Outside Region","Total",588
+2013,"Total","Total","Total","Area Outside Region","Unknown",24
+2013,"Total","Total","Total","Auckland Region","1 bedroom needed",128727
+2013,"Total","Total","Total","Auckland Region","1 bedroom spare",404100
+2013,"Total","Total","Total","Auckland Region","2+ bedrooms needed",75090
+2013,"Total","Total","Total","Auckland Region","2+ bedrooms spare",352044
+2013,"Total","Total","Total","Auckland Region","No extra bedrooms required",357810
+2013,"Total","Total","Total","Auckland Region","Total",1393836
+2013,"Total","Total","Total","Auckland Region","Unknown",76062
+2013,"Total","Total","Total","Bay of Plenty Region","1 bedroom needed",16002
+2013,"Total","Total","Total","Bay of Plenty Region","1 bedroom spare",78975
+2013,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms needed",7581
+2013,"Total","Total","Total","Bay of Plenty Region","2+ bedrooms spare",90417
+2013,"Total","Total","Total","Bay of Plenty Region","No extra bedrooms required",54222
+2013,"Total","Total","Total","Bay of Plenty Region","Total",261639
+2013,"Total","Total","Total","Bay of Plenty Region","Unknown",14439
+2013,"Total","Total","Total","Canterbury Region","1 bedroom needed",22260
+2013,"Total","Total","Total","Canterbury Region","1 bedroom spare",176073
+2013,"Total","Total","Total","Canterbury Region","2+ bedrooms needed",7233
+2013,"Total","Total","Total","Canterbury Region","2+ bedrooms spare",179694
+2013,"Total","Total","Total","Canterbury Region","No extra bedrooms required",116112
+2013,"Total","Total","Total","Canterbury Region","Total",519528
+2013,"Total","Total","Total","Canterbury Region","Unknown",18156
+2013,"Total","Total","Total","Gisborne Region","1 bedroom needed",4011
+2013,"Total","Total","Total","Gisborne Region","1 bedroom spare",11712
+2013,"Total","Total","Total","Gisborne Region","2+ bedrooms needed",1902
+2013,"Total","Total","Total","Gisborne Region","2+ bedrooms spare",12348
+2013,"Total","Total","Total","Gisborne Region","No extra bedrooms required",9927
+2013,"Total","Total","Total","Gisborne Region","Total",42642
+2013,"Total","Total","Total","Gisborne Region","Unknown",2742
+2013,"Total","Total","Total","Hawke's Bay Region","1 bedroom needed",9342
+2013,"Total","Total","Total","Hawke's Bay Region","1 bedroom spare",45336
+2013,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms needed",4155
+2013,"Total","Total","Total","Hawke's Bay Region","2+ bedrooms spare",47862
+2013,"Total","Total","Total","Hawke's Bay Region","No extra bedrooms required",32685
+2013,"Total","Total","Total","Hawke's Bay Region","Total",146262
+2013,"Total","Total","Total","Hawke's Bay Region","Unknown",6882
+2013,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom needed",10491
+2013,"Total","Total","Total","Manawatū-Whanganui Region","1 bedroom spare",68334
+2013,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms needed",3558
+2013,"Total","Total","Total","Manawatū-Whanganui Region","2+ bedrooms spare",77877
+2013,"Total","Total","Total","Manawatū-Whanganui Region","No extra bedrooms required",44439
+2013,"Total","Total","Total","Manawatū-Whanganui Region","Total",213711
+2013,"Total","Total","Total","Manawatū-Whanganui Region","Unknown",9012
+2013,"Total","Total","Total","Marlborough Region","1 bedroom needed",1362
+2013,"Total","Total","Total","Marlborough Region","1 bedroom spare",13251
+2013,"Total","Total","Total","Marlborough Region","2+ bedrooms needed",546
+2013,"Total","Total","Total","Marlborough Region","2+ bedrooms spare",17790
+2013,"Total","Total","Total","Marlborough Region","No extra bedrooms required",7311
+2013,"Total","Total","Total","Marlborough Region","Total",41775
+2013,"Total","Total","Total","Marlborough Region","Unknown",1518
+2013,"Total","Total","Total","Nelson Region","1 bedroom needed",1773
+2013,"Total","Total","Total","Nelson Region","1 bedroom spare",15525
+2013,"Total","Total","Total","Nelson Region","2+ bedrooms needed",525
+2013,"Total","Total","Total","Nelson Region","2+ bedrooms spare",15150
+2013,"Total","Total","Total","Nelson Region","No extra bedrooms required",10158
+2013,"Total","Total","Total","Nelson Region","Total",44553
+2013,"Total","Total","Total","Nelson Region","Unknown",1422
+2013,"Total","Total","Total","Northland Region","1 bedroom needed",9309
+2013,"Total","Total","Total","Northland Region","1 bedroom spare",41877
+2013,"Total","Total","Total","Northland Region","2+ bedrooms needed",4641
+2013,"Total","Total","Total","Northland Region","2+ bedrooms spare",50334
+2013,"Total","Total","Total","Northland Region","No extra bedrooms required",30201
+2013,"Total","Total","Total","Northland Region","Total",147498
+2013,"Total","Total","Total","Northland Region","Unknown",11139
+2013,"Total","Total","Total","Otago Region","1 bedroom needed",6183
+2013,"Total","Total","Total","Otago Region","1 bedroom spare",63486
+2013,"Total","Total","Total","Otago Region","2+ bedrooms needed",1479
+2013,"Total","Total","Total","Otago Region","2+ bedrooms spare",70404
+2013,"Total","Total","Total","Otago Region","No extra bedrooms required",43191
+2013,"Total","Total","Total","Otago Region","Total",192294
+2013,"Total","Total","Total","Otago Region","Unknown",7548
+2013,"Total","Total","Total","Southland Region","1 bedroom needed",2994
+2013,"Total","Total","Total","Southland Region","1 bedroom spare",30939
+2013,"Total","Total","Total","Southland Region","2+ bedrooms needed",645
+2013,"Total","Total","Total","Southland Region","2+ bedrooms spare",34752
+2013,"Total","Total","Total","Southland Region","No extra bedrooms required",17868
+2013,"Total","Total","Total","Southland Region","Total",90354
+2013,"Total","Total","Total","Southland Region","Unknown",3156
+2013,"Total","Total","Total","Taranaki Region","1 bedroom needed",4260
+2013,"Total","Total","Total","Taranaki Region","1 bedroom spare",35199
+2013,"Total","Total","Total","Taranaki Region","2+ bedrooms needed",1233
+2013,"Total","Total","Total","Taranaki Region","2+ bedrooms spare",39600
+2013,"Total","Total","Total","Taranaki Region","No extra bedrooms required",21405
+2013,"Total","Total","Total","Taranaki Region","Total",105978
+2013,"Total","Total","Total","Taranaki Region","Unknown",4281
+2013,"Total","Total","Total","Tasman Region","1 bedroom needed",1437
+2013,"Total","Total","Total","Tasman Region","1 bedroom spare",14733
+2013,"Total","Total","Total","Tasman Region","2+ bedrooms needed",351
+2013,"Total","Total","Total","Tasman Region","2+ bedrooms spare",18645
+2013,"Total","Total","Total","Tasman Region","No extra bedrooms required",9144
+2013,"Total","Total","Total","Tasman Region","Total",45654
+2013,"Total","Total","Total","Tasman Region","Unknown",1347
+2013,"Total","Total","Total","Total","1 bedroom needed",269169
+2013,"Total","Total","Total","Total","1 bedroom spare",1277601
+2013,"Total","Total","Total","Total","2+ bedrooms needed",129123
+2013,"Total","Total","Total","Total","2+ bedrooms spare",1292121
+2013,"Total","Total","Total","Total","No extra bedrooms required",963084
+2013,"Total","Total","Total","Total","Total",4127475
+2013,"Total","Total","Total","Total","Unknown",196374
+2013,"Total","Total","Total","Waikato Region","1 bedroom needed",22785
+2013,"Total","Total","Total","Waikato Region","1 bedroom spare",120363
+2013,"Total","Total","Total","Waikato Region","2+ bedrooms needed",9525
+2013,"Total","Total","Total","Waikato Region","2+ bedrooms spare",137538
+2013,"Total","Total","Total","Waikato Region","No extra bedrooms required",84441
+2013,"Total","Total","Total","Waikato Region","Total",392955
+2013,"Total","Total","Total","Waikato Region","Unknown",18303
+2013,"Total","Total","Total","Wellington Region","1 bedroom needed",27315
+2013,"Total","Total","Total","Wellington Region","1 bedroom spare",147540
+2013,"Total","Total","Total","Wellington Region","2+ bedrooms needed",10482
+2013,"Total","Total","Total","Wellington Region","2+ bedrooms spare",136068
+2013,"Total","Total","Total","Wellington Region","No extra bedrooms required",117846
+2013,"Total","Total","Total","Wellington Region","Total",457770
+2013,"Total","Total","Total","Wellington Region","Unknown",18522
+2013,"Total","Total","Total","West Coast Region","1 bedroom needed",894
+2013,"Total","Total","Total","West Coast Region","1 bedroom spare",9984
+2013,"Total","Total","Total","West Coast Region","2+ bedrooms needed",159
+2013,"Total","Total","Total","West Coast Region","2+ bedrooms spare",11412
+2013,"Total","Total","Total","West Coast Region","No extra bedrooms required",6177
+2013,"Total","Total","Total","West Coast Region","Total",30438
+2013,"Total","Total","Total","West Coast Region","Unknown",1821

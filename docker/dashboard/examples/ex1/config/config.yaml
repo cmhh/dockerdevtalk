@@ -1,0 +1,13 @@
+title: "Example"
+production: true
+data_directory: "data/"
+indicator_definitions: "config/example_indicators.json"
+data_definitions: "config/example_data_definitions.json"
+default_parameters:
+  data_type: "TimeSeries"
+  plot_function: "get_time_series_plot"
+  data_service: "load_from_store"
+primary_color: "#EC6607"
+about_modal_html: "www/about_example.html"
+download_modal_html: "www/download_modal_example.html"
+data_store_filename: "data/data_store.RDS"
