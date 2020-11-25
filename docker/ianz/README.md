@@ -1,3 +1,5 @@
+## Indicators via a Templated Website
+
 The IANZ container runs a simple website consisting mainly of a single templated page, `/indicator/:indicator`.  To build from the `ianz` folder:
 
 ```bash

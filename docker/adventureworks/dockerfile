@@ -1,10 +1,7 @@
-# FROM microsoft/mssql-server-linux
 FROM mcr.microsoft.com/mssql/server
 
 WORKDIR /setup
 
 COPY ./setup .
-
-# RUN chmod +x entrypoint.sh && chmod +x setup.sh
 
 CMD /bin/bash ./entrypoint.sh

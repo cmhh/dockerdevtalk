@@ -20,3 +20,7 @@ docker run -d --rm \
   -p 1433:1433 \
   adventureworks
 ```
+
+I had trouble connecting to this database via SQL Server Management Studio on Windows.  I'm not a heavy Windows user, and spent not time trying to figure this out.  However, I could connect no problem using [dbeaver](https://dbeaver.com/) (which uses a JDBC driver, rather than ODBC):
+
+![](img/dbeaver.png)

@@ -40,6 +40,10 @@ Host devdocker
 
 ![](img/vscode03.png)
 
+We can also access the container directly from powershell using SSH:
+
+![](img/powershell.png)
+
 
 ## Simple sbt Project
 

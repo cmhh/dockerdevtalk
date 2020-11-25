@@ -1,3 +1,5 @@
+## MS SQL Server with AdventureWorks Database
+
 To build the container from the `dashboard` folder:
 
 ```bash

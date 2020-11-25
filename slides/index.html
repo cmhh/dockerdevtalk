@@ -129,8 +129,23 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   -v $PWD/.cache:/root/.cache \
   -v $PWD/.vscode-server:/root/.vscode-server \
   -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
-  -p 23:22 \
+  -p 23:22 -p 9000:9000 -p 9001:9001 \
   development</code></pre>
+				</section>
+
+				<section>
+					<p>We can connect to this container from Windows / vscode.  To do so easily, add the following to <code>${HOME}/.ssh/config</code>:</p>
+					<pre><code class=ssh data-trim>Host dockerdev
+  HostName localhost
+  Port 23
+  User root</code></pre>
+				</section>
+					
+				<section>
+					<img src="media/powershell.png">
+				</section>
+
+				<section data-background="media/vscode-dev.png" data-background-size="contain">
 				</section>
 			</section>
 
