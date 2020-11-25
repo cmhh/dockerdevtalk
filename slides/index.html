@@ -231,13 +231,13 @@ ENTRYPOINT ["bin/ianzpoc"]</code></pre>
 
 				<section>
 					<p>To build the container:</p>
-					<pre><code class=bash data-trim>docker build -t ianz .</code>docker run -td --rm \
+					<pre><code class=bash data-trim>docker build -t ianz .</pre></code>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -td --rm \
   --name ianz \
   -p 9000:9000 \
   -v examples/ex1:/ianz/indicators \
-  ianz</pre>
-					<p>To run an instance:</p>
-					<pre><code class=bash data-trim></code></pre>
+  ianz</code></pre>
 				</section>
 			</section>
 
@@ -422,8 +422,8 @@ CMD service rstudio-server start && \
 					<p>To run an instance:</p>
 					<pre><code class=bash data-trim>docker run -d --rm --name rstudio \
   -p 8787:8787 \
-  -v ${PWD}/.local:/guest/.local \
-  -v ${PWD}/work:/guest/work \
+  -v ${PWD}/.local:/home/guest/.local \
+  -v ${PWD}/work:/home/guest/work \
   rstudio:3.6.3</code></pre>
 				</section>
 			</section>

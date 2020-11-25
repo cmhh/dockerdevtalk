@@ -15,8 +15,8 @@ docker run -d --rm --name development \
   -v $PWD/.npm:/root/.npm \
   -v $PWD/.vscode-server:/root/.vscode-server \
   -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
-  -p 23:22 \
-  developmentdocker rmi $(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'imagename')
+  -p 23:22 -p 9000:9000 -p 9001:9001 \
+  development
 ```
 
 Add other ports as required.  For example, if you're going to run a Node app on port 3000 then add `-p 3000:3000`.  This command also persists a number of caches for the sake of productivity, though it is not required.

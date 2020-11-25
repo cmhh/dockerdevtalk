@@ -20,9 +20,9 @@ As an example of how to call the service:
 curl \
   -X POST \
   -H "Content-Type: application/json" \
-  -d @airpassengers.json \
+  -d @airpassengers.min.json \
   localhost:9001/seasadj/adjust \
-  --compressed --output testairline_output.json
+  --compressed --output airpassengers.output.json
 ```
 
 And as a simple R session:

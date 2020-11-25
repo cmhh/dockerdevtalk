@@ -1,0 +1,6 @@
+.cache
+.ivy2
+.npm
+.vscode-server
+img
+README.md

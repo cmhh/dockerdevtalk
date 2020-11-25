@@ -20,8 +20,8 @@ To run an instance:
 ```bash
 docker run -d --rm --name rstudio \
   -p 8787:8787 \
-  -v ${PWD}/.local:/guest/.local \
-  -v ${PWD}/work:/guest/work \
+  -v ${PWD}/.local:/home/guest/.local \
+  -v ${PWD}/work:/home/guest/work \
   rstudio
 ```
 
