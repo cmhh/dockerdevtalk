@@ -87,9 +87,24 @@ div.inputoutput > pre:nth-child(2) {
 
 .reveal .slides > section > section > pre > code, .inputoutput pre > code {
   width: 100%!important;
-  font-size: 125%!important;
+  font-size: 130%!important;
   line-height: 1.3;
 }
+
+pre.full-page {
+  min-height: 650px!important;
+}
+
+.reveal .slides > section > section > pre.full-page > code {
+  font-size: 140%!important;
+}
+
+/*
+body > div > div.slides > section.stack.present > section.present > pre > code
+pre.full-page > code {
+  font-size: 200%!important;
+}
+*/
 
 section > pre.full-page {
   font-size: 35%;

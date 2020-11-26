@@ -53,9 +53,8 @@
 				<section>
 					<img src="media/container-vm-whatcontainer_2.png" style="height: 90%">
 				</section>
-					
-				<section>
-					<img src="media/docker-works-on-my-machine.jpg" style="height: 90%">
+
+				<section data-background="media/docker-works-on-my-machine.jpg" data-background-size="contain">
 				</section>
 			</section>
 
@@ -75,13 +74,11 @@
 						<li><b>remote extensions</b> are installed for vscode</li>
 					</ul>
 				</section>
-					
-				<section>
-					<img src="media/dev.png" style="margin-top: 70px;">
+
+				<section data-background="media/dev.png" data-background-size="contain">
 				</section>
-					
-				<section>
-					<img src="media/client.png" style="margin-top: 70px;">
+
+				<section data-background="media/client.png" data-background-size="contain">
 				</section>
 			</section>
 
@@ -96,7 +93,7 @@
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN  apt-get update && apt-get -y dist-upgrade && \
+RUN apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends \
     openssh-server curl openjdk-8-jdk locales apt-transport-https gnupg2 git && \
   sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -162,7 +159,7 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 
-RUN  apt-get update && apt-get -y dist-upgrade && \
+RUN apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget && \
   mkdir -p /tmp/x13 && \
   cd /tmp/x13 && \
@@ -190,6 +187,30 @@ ENTRYPOINT ["java", "-cp", "/seasadj.jar", "org.cmhh.seasadj.Service"]</code></p
   -p 9001:9001 \
   seasadj</code></pre>
 				</section>
+
+				<section data-background="media/seasadj01.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<pre><code class=bash data-trim>siege -b -c 12 -t 30s --content-type "application/json" \
+  'http://127.0.0.1:9001/seasadj/adjust?allDates=false&save=ori,sa,trn POST < airpassengers.min.json' </code></pre>
+                    <pre><code data-trim>** SIEGE 4.0.7
+** Preparing 12 concurrent users for battle.
+The server is now under siege...
+Lifting the server siege...
+Transactions:                   6855 hits
+Availability:                 100.00 %
+Elapsed time:                  29.66 secs
+Data transferred:              24.32 MB
+Response time:                  0.04 secs
+Transaction rate:             231.12 trans/sec
+Throughput:                     0.82 MB/sec
+Concurrency:                    9.52
+Successful transactions:        6855
+Failed transactions:               0
+Longest transaction:            1.06
+Shortest transaction:           0.02</code></pre>
+				</section>
 			</section>
 
 			<section>
@@ -206,7 +227,7 @@ ARG ianz_version=1.0-SNAPSHOT
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 
-RUN  apt-get update && apt-get -y dist-upgrade && \
+RUN apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget unzip locales && \
   sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
   dpkg-reconfigure --frontend=noninteractive locales && \
@@ -239,6 +260,33 @@ ENTRYPOINT ["bin/ianzpoc"]</code></pre>
   -v examples/ex1:/ianz/indicators \
   ianz</code></pre>
 				</section>
+
+				<section data-background="media/ianz01.png" data-background-size="contain">
+				</section>
+
+				<section data-background="media/ianz02.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<pre><code class=bash data-trim>siege -b -c 12 -t 30s \
+  http://localhost:9000/ianzpoc/indicator/te_reo_maori_speakers</code></pre>
+                    <pre><code data-trim>** SIEGE 4.0.7
+** Preparing 12 concurrent users for battle.
+The server is now under siege...
+Lifting the server siege...
+Transactions:                  36350 hits
+Availability:                 100.00 %
+Elapsed time:                  29.19 secs
+Data transferred:           10051.20 MB
+Response time:                  0.01 secs
+Transaction rate:            1245.29 trans/sec
+Throughput:                   344.34 MB/sec
+Concurrency:                   11.46
+Successful transactions:       36350
+Failed transactions:               0
+Longest transaction:            1.03
+Shortest transaction:           0.00</code></pre>
+				</section>
 			</section>
 
 			<section>
@@ -253,7 +301,7 @@ ENTRYPOINT ["bin/ianzpoc"]</code></pre>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN  apt-get update && apt-get -y dist-upgrade && \
+RUN apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends \
     curl locales git r-base r-base-dev libcurl4-openssl-dev libssl-dev libxml2-dev && \
   sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -262,7 +310,8 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   git clone https://github.com/StatisticsNZ/data_portal.git && \
   R -e "install.packages(c('dplyr', 'configr', 'highcharter', 'shinyjs', \
     'readxl', 'lubridate', 'tidyr', 'stringr', 'jsonlite', 'R6', 'httr', \
-    'data.table', 'shiny', 'shinycssloaders', 'foreach'), repos = 'https://cran.rstudio.com')" && \
+    'data.table', 'shiny', 'shinycssloaders', 'foreach'), \
+    repos = 'https://cran.rstudio.com')" && \
   apt-get remove -y git r-base-dev && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*  
@@ -368,7 +417,7 @@ ARG rstudio_version=1.4.1032
 ENV DEBIAN_FRONTEND=noninteractive
 ENV SHELL=/bin/bash
 
-RUN  apt-get update && apt-get -y dist-upgrade && \
+RUN apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends \
     gnupg2 dirmngr ca-certificates build-essential \
     libcairo2-dev '^perl-modules-[0-9].[0-9]+$' \

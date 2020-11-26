@@ -12,7 +12,7 @@ The information required for the indicators exists in the folder, `/ianz/indicat
 docker run -td --rm \
   --name ianz \
   -p 9000:9000 \
-  -v examples/ex1:/ianz/indicators \
+  -v ${PWD}/examples/ex1:/ianz/indicators \
   ianz 
 ```
 

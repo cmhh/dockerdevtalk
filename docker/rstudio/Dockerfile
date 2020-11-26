@@ -37,6 +37,7 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   ln -s /usr/local/lib/R/bin/Rscript /usr/bin/Rscript && \
   cd / && rm -fR src && \
   echo "local({\n  r <- getOption('repos')\n  r['CRAN'] <- 'https://cloud.r-project.org'\n  options(repos = r)\n})" > /usr/local/lib/R/etc/Rprofile.site && \
+  echo "\noptions('bitmapType' = 'cairo')" >> /usr/local/lib/R/etc/Rprofile.site && \
   echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" > /usr/local/lib/R/etc/Renviron.site && \
   R -e "install.packages('renv')" && \
   wget https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-${rstudio_version}-amd64.deb && \
