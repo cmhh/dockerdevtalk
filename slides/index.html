@@ -324,6 +324,9 @@ CMD R -e "shiny::runApp('/data_portal', host = '0.0.0.0', port = 3000)"</code></
 				<section>
 					<p>To build the container:</p>
 					<pre><code class=bash data-trim>docker build -t dashboard .</code></pre>
+				</section>
+
+				<section>
 					<p>To run an instance:</p>
 					<pre><code class=bash data-trim>docker run -d --rm \
   --name dashboard1 \
@@ -332,6 +335,23 @@ CMD R -e "shiny::runApp('/data_portal', host = '0.0.0.0', port = 3000)"</code></
   -v $PWD/ex1/www:/data_portal/www \
   -p 3000:3000 \
   dashboard</code></pre>
+				</section>				
+
+				<section data-background="media/dashboard01.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<p>To run another instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm \
+  --name dashboard2 \
+  -v $PWD/ex2/config:/data_portal/config \
+  -v $PWD/ex2/data:/data_portal/data \
+  -v $PWD/ex2/www:/data_portal/www \
+  -p 3001:3000 \
+  dashboard</code></pre>
+				</section>				
+
+				<section data-background="media/dashboard02.png" data-background-size="contain">
 				</section>
 			</section>
 
@@ -367,9 +387,15 @@ CMD [ "app.py" ]</code></pre>
 					<p>To run an instance:</p>
 					<pre><code class=bash data-trim>docker run -d --rm \
   --name resnet \
-  -p 5000:5000 \
+  -p 5001:5000 \
   -v $PWD/model:/app/model \
   resnet</code></pre>
+				</section>			
+
+				<section data-background="media/resnet01.png" data-background-size="contain">
+				</section>			
+
+				<section data-background="media/resnet02.png" data-background-size="contain">
 				</section>
 			</section>
 
@@ -397,7 +423,10 @@ CMD /bin/bash ./entrypoint.sh</code></pre>
   -e 'MSSQL_SA_PASSWORD=password-1234' \
   -p 1433:1433 \
   adventureworks</code></pre>
-				</section>
+				</section>			
+
+				<section data-background="media/dbeaver.png" data-background-size="contain">
+				</section>	
 			</section>
 
 			<section>
@@ -469,11 +498,31 @@ CMD service rstudio-server start && \
   -t rstudio:3.6.3 \
   .</code></pre>
 					<p>To run an instance:</p>
-					<pre><code class=bash data-trim>docker run -d --rm --name rstudio \
+					<pre><code class=bash data-trim>docker run -d --rm --name rstudio01 \
   -p 8787:8787 \
   -v ${PWD}/.local:/home/guest/.local \
   -v ${PWD}/work:/home/guest/work \
   rstudio:3.6.3</code></pre>
+				</section>			
+
+				<section data-background="media/rstudio01.png" data-background-size="contain">
+				</section>
+
+				<section>
+					<p>To build the container with a different R version:</p>
+					<pre><code class=bash data-trim>docker build \
+  --build-arg r_version=4.0.3 \
+  -t rstudio:4.0.3 \
+  .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm --name rstudio02 \
+  -p 8788:8787 \
+  -v ${PWD}/.local:/home/guest/.local \
+  -v ${PWD}/work:/home/guest/work \
+  rstudio:4.0.3</code></pre>
+				</section>			
+
+				<section data-background="media/rstudio02.png" data-background-size="contain">
 				</section>
 			</section>
 
@@ -534,10 +583,9 @@ networks:
 					<pre><code class=bash data-trim>docker pull localhost:8080/rstudio:4.0.3</code></pre>
 					<p>and then running it in the usual way:</p>
 					<pre><code class=bash data-trim>docker run -d --rm --name rstudio -p 8787:8787 localhost:8080/rstudio:4.0.3</code></pre>
-				</section>
-					
-				<section>
-					<img src="media/registryui.png" >
+				</section>		
+
+				<section data-background="media/registryui.png" data-background-size="contain">
 				</section>
 			</section>
 			

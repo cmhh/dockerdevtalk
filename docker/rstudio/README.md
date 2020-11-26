@@ -18,7 +18,7 @@ docker build \
 To run an instance:
 
 ```bash
-docker run -d --rm --name rstudio \
+docker run -d --rm --name rstudio01 \
   -p 8787:8787 \
   -v ${PWD}/.local:/home/guest/.local \
   -v ${PWD}/work:/home/guest/work \
