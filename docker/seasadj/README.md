@@ -25,6 +25,10 @@ curl \
   --compressed --output airpassengers.output.json
 ```
 
+It is straightforward to consume the service using a client side, single-page app.  A very basic example is provided in [client](./client), and looks as follows:
+
+![](img/seasadjclient.png)
+
 And as a simple R session:
 
 ```R
