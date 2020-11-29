@@ -4,10 +4,20 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.src.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/atom-one-light.min.css">  
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-textrange.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-selectionsaverestore.min.js"></script>
         <style>
             * {
                 padding: 0;
                 margin: 0;
+            }
+
+            pre > code {
+              height: 400px;
+              font-size: 90%;
             }
 
             body {
@@ -43,11 +53,15 @@
             }
 
             #spec {
-                width: 100%;
+                padding: 5px;
+                margin: 0;
+                width: calc(100% - 10px);
+                max-width: 100%;
                 height: 400px;
                 font-size: 90%;
                 resize: none;
                 outline: none;
+                overflow-x: none;
             }
 
             #input {
@@ -55,8 +69,8 @@
                 width: 40%;
                 margin-left: auto;
                 margin-right: auto;
-                overflow-x: auto;
-                overflow-y: auto;
+                overflow-x: none!important;
+                overflow-y: none!important;
             }
 
             #result {
@@ -68,7 +82,42 @@
             }
 
             @media (max-width: 900px) {
-                
+                #input, #result {
+                  display: block;
+                  width: 100%;
+                }
+
+                #spec {
+                  height: 260px;
+                }
+            }
+
+            #adjust {
+                box-shadow:inset 0px 1px 3px 0px #91b8b3;
+                background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+                background-color: #768d87;
+                border-radius: 3px;
+                border: 1px solid #566963;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family:Arial;
+                font-size: 85%;
+                font-weight: bold;
+                padding:5px 8px;
+                text-decoration: none;
+                text-shadow: 0px -1px 0px #2b665e;
+                margin-top: 8px;
+            }
+
+            #adjust:hover {
+                background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+                background-color:#6c7c7c;
+            }
+
+            #adjust:active {
+                position:relative;
+                top:1px;
             }
         </style>
     </head>
@@ -144,10 +193,16 @@
                     res: []
                 },
                 methods: {
+                    highlight() {
+                        let ss = rangy.saveSelection()
+                        let el = document.getElementById("spec2")
+                        hljs.highlightBlock(el)
+                        rangy.restoreSelection(ss)
+                    },
                     doAdjust(){
                         let context = this                        
                         axios
-                            .post("http://localhost:9001/seasadj/adjust?save=ori,sa,trn", document.getElementById("spec").value)
+                            .post("http://localhost:9001/seasadj/adjust?save=ori,sa,trn", document.getElementById("spec").textContent)
                             .then(response => {
                                 let res = response.data;
                                 let key = Object.keys(res)[0]
@@ -164,9 +219,7 @@
                 template:`
                     <div id=container><div id=content>
                         <div id=input>
-                            <!--<label for="spec">Specification:</label><br>-->
-                            <textarea id="spec" name="spec">
-{
+                            <pre><code id=spec class="json" contenteditable="true" v-on:keyup="highlight" data-trim>{
   "ap": {
     "series": {
       "title": "Air Passengers",
@@ -182,16 +235,17 @@
     },
     "x11": null
   }
-}
-                            </textarea>
+}</code></pre>
+                            <button type="button" @click="doAdjust" id=adjust>Adjust</button>
                         </div>
                         <div id=result>
                             <seasadjchart v-bind:tsdata="res" name=seasadjres></seasadjchart>
                         </div>
-                        <button type="button" @click="doAdjust">Adjust</button>
                     </div></div>
                 `
             })
         </script>
+
+        <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
