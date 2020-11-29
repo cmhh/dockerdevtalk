@@ -28,7 +28,7 @@ If we want to connect to this container from Visual Studio Code on Linux, we can
 In my case, Visual Studio Code refuses to connect without a password unless the connection details are stored in the users' home directory in the file `.ssh/config`.  For example:
 
 ```as.is
-Host devdocker
+Host dockerdev
   HostName localhost
   Port 23
   User root

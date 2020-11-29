@@ -191,6 +191,9 @@ ENTRYPOINT ["java", "-cp", "/seasadj.jar", "org.cmhh.seasadj.Service"]</code></p
 				<section data-background="media/seasadj01.png" data-background-size="contain">
 				</section>
 
+				<section data-background="media/seasadj02.png" data-background-size="contain">
+				</section>
+
 				<section>
 					<pre><code class=bash data-trim>siege -b -c 12 -t 30s --content-type "application/json" \
   'http://127.0.0.1:9001/seasadj/adjust?allDates=false&save=ori,sa,trn POST < airpassengers.min.json' </code></pre>

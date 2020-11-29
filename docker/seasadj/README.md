@@ -35,7 +35,7 @@ And as a simple R session:
 library(httr)
 
 response <- POST(
-  "https://cmhh.hopto.org/seasadj/adjust?save=ori,sa,trn", 
+  "http://localhost:9001/seasadj/adjust?save=ori,sa,trn", 
   body = upload_file("~/Downloads/airpassengers.json")
 )
 
