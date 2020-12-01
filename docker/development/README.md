@@ -6,7 +6,7 @@ This container contains Ubuntu 20.04 with OpenJDK-8 and .NET installed, along wi
 docker build -t development .
 ```
 
-When running the container, if we wish to connect via SSH, we need to pass in our publish SSH key at runtime via the environment variable `PUB_KEY`.  Doing it at runtime means that our compiled image does not contain our key, which would obviously be problematic.  Assuming our public key is contained in `$HOME/.ssh/id_rsa.pub`, we start an instance of the image as follows:
+When running the container, if we wish to connect via SSH, we need to pass in our publish SSH key at runtime via the environment variable `PUB_KEY`.  Doing it at runtime means that our compiled image does not contain our key, which would obviously be problematic.  Assuming our public key is contained in `$HOME/.ssh/id_rsa.pub` and private key is contained in `$HOME/.ssh/id_rsa`, we start an instance of the image as follows:
 
 ```bash
 docker run -d --rm --name development \
@@ -15,6 +15,7 @@ docker run -d --rm --name development \
   -v $PWD/.npm:/root/.npm \
   -v $PWD/.vscode-server:/root/.vscode-server \
   -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
+  -e "PRIVATE_KEY=$(cat $HOME/.ssh/id_rsa)" \
   -p 23:22 -p 9000:9000 -p 9001:9001 \
   development
 ```

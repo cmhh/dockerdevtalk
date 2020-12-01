@@ -132,6 +132,58 @@ And provided the right ports are open, we can test web services and so forth loc
 
 ## Deployment via Containers
 
+Applications are routinely deployed using containers.  In this case, we run a simple [seasonal adjustment service](https://github.com/cmhh/seasadj).  The `Dockerfile` is as follows:
+
+```Dockerfile
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV SHELL /bin/bash
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget gfortran make && \
+  mkdir -p /tmp/x13 && \
+  cd /tmp/x13 && \
+  # wget https://www.census.gov/ts/x13as/unix/x13ashtmlall_V1.1_B39.tar.gz && \
+  # tar -xvf x13ashtmlall_V1.1_B39.tar.gz && \
+  # mv x13ashtml /usr/bin/ && \
+  wget https://www.census.gov/ts/x13as/unix/x13ashtmlsrc_V1.1_B39.tar.gz && \
+  tar -xvf x13ashtmlsrc_V1.1_B39.tar.gz && \
+  make -j20 -f makefile.gf && \
+  mv x13asHTMLv11b39 /usr/bin/x13ashtml && \
+  cd / && \
+  rm -fR /tmp/x13 && \
+  wget https://github.com/cmhh/seasadj/releases/download/0.1.0-SNAPSHOT/seasadj.jar && \
+  apt-get remove -y wget gfortran make && \ 
+  apt-get autoremove -y && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* 
+
+EXPOSE 9001
+
+ENTRYPOINT ["java", "-cp", "/seasadj.jar", "org.cmhh.seasadj.Service"]
+```
+
+In this example, we simply create a basic instance with a Java runtime, and download an [artefact](https://github.com/cmhh/seasadj/releases/download/0.1.0-SNAPSHOT/seasadj.jar) from GitHub to serve as our entrypoint.  Note that the service itself also requires [X13-ARIMA-SEATS](https://www.census.gov/srd/www/x13as/) be present. (Note that an earlier version of the container simply downloaded a precompiled binary, but that this binary seemed to cause a segmentation fault when run.  So, in this version the source is instead downloaded and compiled to produce a working binary.)
+
+As usual, the container is built as follows:
+
+```bash
+docker built -t seasadj .
+```
+
+and run as follows:
+
+```bash
+docker run -d --rm --name seasadj -p 9001:9001 seasadj
+```
+
+The service is stateless.  It accepts one or more input specifications as a JSON array, and returns seasonally adjusted data in the same format.  A basic SPA is provided for quick testing, which can be run directly from the file system:
+
+![](img/seasadjclient.png)
+
+Under basic load testing, the service could handle around 230 transactions per second on a laptop with an 8 core AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx 2.00 GHz processor.  And while no security is provided directly, authentication methods can be added easily if required, and communication can be encrypted easily enough using Nginx or similar.
+
 ## Databases via Containers
 
 ## Analytics via Containers

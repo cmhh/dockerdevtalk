@@ -112,7 +112,10 @@ RUN apt-get update && apt-get -y dist-upgrade && \
   EXPOSE 22
   
   CMD mkdir -p /root/.ssh && \
-    echo $PUB_KEY >> /root/.ssh/authorized_keys && \
+	echo "$PUB_KEY" >> /root/.ssh/authorized_keys && \
+	echo "$PUB_KEY" >> /root/.ssh/id_rsa.pub && \
+	echo "$PRIVATE_KEY" >> /root/.ssh/id_rsa && \
+	chmod 700 /root/.ssh && chmod 600 /root/.ssh/* && \
     service ssh start && \
     tail -f /dev/null</code></pre>
 				</section>
@@ -126,6 +129,7 @@ RUN apt-get update && apt-get -y dist-upgrade && \
   -v $PWD/.cache:/root/.cache \
   -v $PWD/.vscode-server:/root/.vscode-server \
   -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
+  -e "PRIVATE_KEY=$(cat $HOME/.ssh/id_rsa)" \
   -p 23:22 -p 9000:9000 -p 9001:9001 \
   development</code></pre>
 				</section>
