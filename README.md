@@ -75,7 +75,10 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   EXPOSE 22
   
   CMD mkdir -p /root/.ssh && \
-    echo $PUB_KEY >> /root/.ssh/authorized_keys && \
+    echo "$PUB_KEY" >> /root/.ssh/authorized_keys && \
+    echo "$PUB_KEY" >> /root/.ssh/id_rsa.pub && \
+    echo "$PRIVATE_KEY" >> /root/.ssh/id_rsa && \
+    chmod 700 /root/.ssh && chmod 600 /root/.ssh/* && \
     service ssh start && \
     tail -f /dev/null  
 ```
@@ -105,11 +108,12 @@ docker run -d --rm --name development \
   -v $PWD/.npm:/root/.npm \
   -v $PWD/.vscode-server:/root/.vscode-server \
   -e "PUB_KEY=$(cat $HOME/.ssh/id_rsa.pub)" \
+  -e "PRIVATE_KEY=$(cat $HOME/.ssh/id_rsa)" \
   -p 23:22 -p 9001:9001 -p 5001:5001 -p 3001:3001 \
   development
 ```
 
-In this case, we copy our public key to the container _at runtime_ so that we can connect without a password via a standard ssh client.  In particular, we add the following to our SSH config:
+In this case, we copy our keys to the container _at runtime_ so that we can connect without a password via a standard SSH client.  In particular, we add the following to our SSH config:
 
 ```
 Host devdocker
