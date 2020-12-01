@@ -179,7 +179,7 @@ docker built -t seasadj .
 and run as follows:
 
 ```bash
-docker run -d --rm --name seasadj -p 9001:9001 seasadj
+docker run -td --rm --name seasadj -p 9001:9001 seasadj
 ```
 
 The service is stateless.  It accepts one or more input specifications as a JSON array, and returns seasonally adjusted data in the same format.  A basic SPA is provided for quick testing, which can be run directly from the file system:
@@ -190,6 +190,169 @@ Under basic load testing, the service could handle around 230 transactions per s
 
 ## Databases via Containers
 
+Fully functional versions of popular databases are often available via official Docker images, both relational and NoSQL alike.  For development purposes, containerised databases will generally suffice, and can be run in a completely local context.
+
+Consider the following `Dockerfile`, a modified version of [adventureworks-docker](https://github.com/robyvandamme/adventureworks-docker), which provides a containerised version of Microsoft SQL Server with the popular AdventureWorks database pre-loaded:
+
+```Dockerfile
+FROM mcr.microsoft.com/mssql/server
+
+WORKDIR /setup
+
+COPY ./setup .
+
+CMD /bin/bash ./entrypoint.sh
+```
+
+This is very simple, though does depend on a large SQL script, `setup-db.sql`.  To build:
+
+```bash
+docker build -t adventureworks .
+```
+
+To run an instance:
+
+```bash
+docker run -d --rm \
+  --name adventureworks \
+  -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=password-1234' \
+  -p 1431:1431 \
+  -p 1432:1432 \
+  -p 1433:1433 \
+  adventureworks
+```
+
+Once running, one can then connect using database clients such as the excellent [DBeaver](https://dbeaver.com/):
+
+![](img/dbeaver.png)
+
+
 ## Analytics via Containers
 
+Containers can be used to house any manner of analytical environment, from R with RStudio, to JupyterLab with a variety of kernels, and even to a fully-functional, if not highly performing, Big Data stack.
+
+Consider the following `Dockerfile`:
+
+```Dockerfile
+ARG ubuntu_version=20.04
+
+FROM ubuntu:$ubuntu_version
+
+ARG cores=12
+ARG r_version=4.0.3
+ARG rstudio_version=1.4.1032
+ENV DEBIAN_FRONTEND=noninteractive
+ENV SHELL=/bin/bash
+
+RUN  apt-get update && apt-get -y dist-upgrade && \
+  apt-get install -y --no-install-recommends \
+    gnupg2 dirmngr ca-certificates build-essential \
+    libcairo2-dev '^perl-modules-[0-9].[0-9]+$' \
+    libssl-dev libgit2-dev libcurl4-gnutls-dev libxml2-dev curl wget htop locales \
+    openjdk-8-jdk python3-pip git vim libudunits2-dev \
+    grass gdal-bin libgdal-dev libgeos-dev libproj-dev proj-bin proj-data \
+    libblas3 libatlas-base-dev liblapack-dev libreadline-dev gfortran \
+    libx11-dev libxt-dev zlib1g-dev libbz2-dev liblzma-dev libpcre2-dev \
+    sudo lsb-release gdebi-core psmisc libclang-dev libapparmor1 && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* && \
+  sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8 && \
+  wget -qO- "https://yihui.org/gh/tinytex/tools/install-unx.sh" | sh -s - --admin --no-path && \
+  mv /root/.TinyTeX /usr/local/TinyTex && \
+  /usr/local/TinyTex/bin/*/tlmgr path add && \
+  mkdir /src && \
+  cd /src && \
+  wget https://cran.r-project.org/src/base/R-$(echo $r_version | cut -d'.' -f 1)/R-${r_version}.tar.gz && \
+  tar -xvf R-${r_version}.tar.gz && \
+  cd /src/R-${r_version} && \
+  ./configure --enable-R-shlib --with-blas --with-lapack --enable-memory-profiling --with-cairo && \
+  make -j $cores && make install && \
+  ln -s /usr/local/lib/R/bin/R /usr/bin/R && \
+  ln -s /usr/local/lib/R/bin/Rscript /usr/bin/Rscript && \
+  cd / && rm -fR src && \
+  echo "local({\n  r <- getOption('repos')\n  r['CRAN'] <- 'https://cloud.r-project.org'\n  options(repos = r)\n})" > /usr/local/lib/R/etc/Rprofile.site && \
+  echo "\noptions('bitmapType' = 'cairo')" >> /usr/local/lib/R/etc/Rprofile.site && \
+  echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" > /usr/local/lib/R/etc/Renviron.site && \
+  R -e "install.packages('renv')" && \
+  wget https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-${rstudio_version}-amd64.deb && \
+  gdebi --non-interactive rstudio-server-${rstudio_version}-amd64.deb && \
+  rm rstudio-server-${rstudio_version}-amd64.deb
+  
+RUN adduser --disabled-password --gecos "" guest && \
+  usermod --password $(openssl passwd -1 guest) guest && \
+  usermod -aG sudo guest 
+
+EXPOSE 8787
+
+CMD service rstudio-server start && \
+  tail -f /dev/null
+```
+
+The `Dockerfile` accepts build arguments, so images containing different versions of R, for example, can be created from the same set of instructions.  For example:
+
+```bash
+docker build -t rstudio:4.0.3 --build-arg r_version=4.0.3 .
+```
+
+To run a container with the image:
+
+```bash
+docker run -d --rm \
+  --name rstudio \
+  -p 8787:8787 \
+  -v ${PWD}/.local:/home/guest/.local \
+  rstudio:4.0.3
+```
+
+![](img/rstudioex.png)
+
+
 ## Using a Registry
+
+Consider the analytics example above, consisting of a containerised R environment.  Such an image might well be of value to an entire group of analysts, so rather than provide a `Dockerfile` that each person can use to build their own image we could build the image once and then push it to a central registry for anybody to use.
+
+We use Docker compose to create a very simple example using a local registry and a [basic web-based UI](https://github.com/Joxit/docker-registry-ui).  Consider the following, which we save as `docker-compose.yml`:
+
+```yaml
+version: "3.8"
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry-data:/var/lib/registry
+    networks:
+      - registrynet
+  ui:
+    image: joxit/docker-registry-ui:static
+    ports:
+      - 8080:80
+    environment:
+      - REGISTRY_TITLE=Local Docker Registry
+      - REGISTRY_URL=http://registry:5000
+    depends_on:
+      - registry
+    networks:
+      - registrynet
+networks:
+  registrynet:
+```
+
+This describes the coordination of two containers as a single registry setup, and can be run as follows:
+
+```bash
+docker-compose up -d
+```
+
+The R image build earlier can be tagged and pushed to the registry as follows:
+
+```bash
+docker tag rstudio:4.0.3 localhost:8080/rstudio:4.0.3
+docker push localhost:8080/rstudio:4.0.3
+```
+
+![](img/registryui.png)

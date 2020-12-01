@@ -9,3 +9,5 @@ To stop the registry:
 ```bash
 docker-compose down
 ```
+
+![](img/registryui.png)
