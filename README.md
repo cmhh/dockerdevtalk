@@ -1,23 +1,21 @@
 ## Working Productively on Windows Using Windows Subsystem for Linux 2 and Docker
 
-A relatively common scenario in enterprise is to provide users with a Windows desktop with a relatively small set of tools, and without administrative access.  Depending on the type of work required, this sort of configuration might be perfectly reasonable, but for others it will be productivity-limiting at best.
+A relatively common scenario in enterprise is to provide users a Windows desktop with a relatively small set of tools, and without administrative access.  Depending on the type of work required, this sort of configuration might be perfectly reasonable, but for others it will be productivity-limiting _at best_.
 
-Here we discuss the use of Windows Subsytem for Linux 2 (WSL2), along with Docker, as a means of end-user enablement that might offer a reasonable compromise between safety and productivity.  WSL2 allows Windows users to install a largely feature-complete version of Linux within Windows itself, which can be used 'remotely' via Visual Studio Code (vscode) for almost anything.  Normal users will have administrative rights within the Linux installation, but will not have any heightened access over the host OS itself, meaning users are free to experiment with little risk to the host.
+Here we discuss the use of Windows Subsystem for Linux 2 (WSL2), along with Docker, as a means of end-user enablement that might offer a reasonable compromise between safety and productivity.  WSL2 allows Windows users to install a largely feature-complete version of Linux within Windows itself, which can be used 'remotely' via Visual Studio Code (vscode) for almost anything.  Normal users will have administrative rights within the Linux installation, but will not have any heightened access over the host OS itself, meaning users are free to experiment with little risk to the host.
 
-Linux on WSL is a perfectly reasonable sandpit in its own right&ndash;we can experiment as suggested, and if somehow break the install we can simply blow it away and start again.  Even so, here we use the Linux instance purely to build Docker images and run Docker containers, ensuring the Linux system remains free of clutter, while providing yet another layer of abstraction.  That is, we run tools via Docker, which runs via Linux on WSL2, rather than installing those tools in Windows.  The target tools are then accessed remotely via SSH or similar, or via some other client interface, such as a web browser or web service.
+Linux on WSL is a perfectly reasonable sandpit in its own right&ndash;we can experiment as suggested, and if we somehow break the install we can simply blow it away and start again.  Even so, we can choose to use the Linux instance only to build Docker images and run Docker containers, ensuring the Linux system remains free of clutter, while providing yet another layer of abstraction.  That is, we run tools via Docker, which runs via Linux on WSL2, rather than installing those tools in Windows.  The target tools are then accessed remotely via SSH or similar, or via some other client interface, such as a web browser or web service.
 
 ![](slides/media/dev.png)
 
-![](slides/media/client.png)
-
 ## Prerequisites
 
-The goal is to demonstrate that we can make Windows a productive environment in an enterprise setting, with only a minimal set of tools to bootrap our efforts.  Specifically, all that is strictly required is:
+The goal is to demonstrate that we can make Windows a productive environment in an enterprise setting, with only a minimal set of tools to bootstrap our efforts.  All that is strictly required is:
 
 * WSL2 is enabled on Windows
 * Ubuntu 20.04 is installed for WSL2
 * Docker is installed on Ubuntu 20.04
-* OpenSSH client is enabled
+* OpenSSH client is enabled on Windows
 * Visual Studio Code is installed on Windows
 * remote extensions are installed for vscode
 
@@ -25,9 +23,9 @@ WSL2 is available on Windows 10, any edition, build 2004 and up, as well as for 
 
 ## Docker Basics
 
-To create a Docker image, we just need a file called `Dockerfile` containing a complete set of instructions for the build.  That is, a container is (or can be) completely reproducible given only the `Dockerfile`, and so it is often sufficient to manage just this in a version controls system.
+To create a Docker image, we just need a file called `Dockerfile` containing a complete set of instructions for the build.  That is, a container is (or can be) completely reproducible given only the `Dockerfile`, and so it is often sufficient to manage just this in a version control system.
 
-We'll see `Dockerfile` examples in the following sections, but given a file, all we need to do to actually create a runnable image called `foo` is to run:
+We'll see `Dockerfile` examples in the following sections, but given such a file, all we need to do to actually create a runnable image called `foo` is to run:
 
 ```bash
 docker build -t foo <path to Dockerfile>
@@ -38,6 +36,8 @@ Once created, we can then run instances of the image by running something like t
 ```bash
 docker run -d --rm --name mycontainer foo 
 ``` 
+
+Of course, this is the simplest possible setup, and things can certainly ramp up a bit.  We can copy files from local folders into the image, parameterise the build by using build arguments, add environment variables at runtime, create ad hoc networks for collections of containers, create volumes or mount local folders for persisting data, and more.
 
 ## Containers as Generic Development Environments 
 
@@ -116,7 +116,7 @@ docker run -d --rm --name development \
 In this case, we copy our keys to the container _at runtime_ so that we can connect without a password via a standard SSH client.  In particular, we add the following to our SSH config:
 
 ```
-Host devdocker
+Host dockerdev
   HostName localhost
   Port 23
   User root
@@ -148,9 +148,6 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   apt-get install -y --no-install-recommends ca-certificates openjdk-8-jre-headless wget gfortran make && \
   mkdir -p /tmp/x13 && \
   cd /tmp/x13 && \
-  # wget https://www.census.gov/ts/x13as/unix/x13ashtmlall_V1.1_B39.tar.gz && \
-  # tar -xvf x13ashtmlall_V1.1_B39.tar.gz && \
-  # mv x13ashtml /usr/bin/ && \
   wget https://www.census.gov/ts/x13as/unix/x13ashtmlsrc_V1.1_B39.tar.gz && \
   tar -xvf x13ashtmlsrc_V1.1_B39.tar.gz && \
   make -j20 -f makefile.gf && \
@@ -168,7 +165,7 @@ EXPOSE 9001
 ENTRYPOINT ["java", "-cp", "/seasadj.jar", "org.cmhh.seasadj.Service"]
 ```
 
-In this example, we simply create a basic instance with a Java runtime, and download an [artefact](https://github.com/cmhh/seasadj/releases/download/0.1.0-SNAPSHOT/seasadj.jar) from GitHub to serve as our entrypoint.  Note that the service itself also requires [X13-ARIMA-SEATS](https://www.census.gov/srd/www/x13as/) be present. (Note that an earlier version of the container simply downloaded a precompiled binary, but that this binary seemed to cause a segmentation fault when run.  So, in this version the source is instead downloaded and compiled to produce a working binary.)
+In this example, we simply create a basic instance with a Java runtime, and download an [artefact](https://github.com/cmhh/seasadj/releases/download/0.1.0-SNAPSHOT/seasadj.jar) from GitHub to serve as our entrypoint.  Note that the service itself also requires [X13-ARIMA-SEATS](https://www.census.gov/srd/www/x13as/) be present, so we download the source and compile it as part of the image build. 
 
 As usual, the container is built as follows:
 
@@ -182,7 +179,40 @@ and run as follows:
 docker run -td --rm --name seasadj -p 9001:9001 seasadj
 ```
 
-The service is stateless.  It accepts one or more input specifications as a JSON array, and returns seasonally adjusted data in the same format.  A basic SPA is provided for quick testing, which can be run directly from the file system:
+The service is stateless.  It accepts one or more input specifications as a JSON array, and returns seasonally adjusted data in the same format.  For example, to adjust the following JSON input:
+
+```json
+{
+  "ap": {
+    "series": {
+      "title": "Air Passengers",
+      "start": 1958.01,
+      "data": [
+        340.0, 318.0, 362.0, 348.0, 363.0, 435.0, 
+        491.0, 505.0, 404.0, 359.0, 310.0, 337.0, 
+        360.0, 342.0, 406.0, 396.0, 420.0, 472.0, 
+        548.0, 559.0, 463.0, 407.0, 362.0, 405.0, 
+        417.0, 391.0, 419.0, 461.0, 472.0, 535.0, 
+        622.0, 606.0, 508.0, 461.0, 390.0, 432.0
+      ]
+    },
+    "x11": null
+  }
+}
+```
+
+we could use CURL as follows:
+
+```bash
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d @airpassengers.min.json \
+  localhost:9001/seasadj/adjust \
+  --compressed --output airpassengers.output.json
+```
+
+We could even build a SPA.  The following is a screenshot of a basic app written using Vue.js, for example:
 
 ![](img/seasadjclient.png)
 
@@ -227,6 +257,7 @@ Once running, one can then connect using database clients such as the excellent 
 
 ![](img/dbeaver.png)
 
+The database provided is a full-featured version of SQL Server, and so is sufficient for local development, but also general purpose testing.  Want to know what sort of performance improvement would be achieved with the addition of a columnstore index?  You can test the locally&ndash;no need to appeal to a physical or remote test environment, certainly if one doesn't already exist, or if a process must be followed to be granted access. 
 
 ## Analytics via Containers
 
@@ -355,4 +386,18 @@ docker tag rstudio:4.0.3 localhost:8080/rstudio:4.0.3
 docker push localhost:8080/rstudio:4.0.3
 ```
 
+The UI itself will be available in our web browser at `localhost:8080`:
+
 ![](img/registryui.png)
+
+# Summary
+
+WSL2 lets us use a Windows machine for any manner of local development and analytics.  A Linux instance running via WSL2 gives us a degree of isolation, and so is relatively safe&ndash;perhaps no less safe than allowing the local use of something like Python.  We can ramp up the isolation by using the Linux instance exclusively to build Docker images and run Docker containers.  Besides, using containers dramatically simplifies application deployment, and is relatively standard at this point, and so is a useful skill to develop.
+
+Having access to a Linux instance, and having the ability to build and run container images, means there's almost nothing we couldn't build or test locally, so with little cost or administrative drag.  The use cases here are by no means exhaustive, but we can:
+
+* use containers to build and test applications locally
+* use containers to test deployment of applications
+* use containers to house (possibly ephemeral) database instances
+* use containers to run or test analytical / data science platforms
+* and much more!

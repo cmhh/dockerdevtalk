@@ -15,8 +15,6 @@ docker run -d --rm \
   --name adventureworks \
   -e 'ACCEPT_EULA=Y' \
   -e 'MSSQL_SA_PASSWORD=password-1234' \
-  -p 1431:1431 \
-  -p 1432:1432 \
   -p 1433:1433 \
   adventureworks
 ```

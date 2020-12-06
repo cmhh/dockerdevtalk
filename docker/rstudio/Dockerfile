@@ -13,7 +13,7 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
     gnupg2 dirmngr ca-certificates build-essential \
     libcairo2-dev '^perl-modules-[0-9].[0-9]+$' \
     libssl-dev libgit2-dev libcurl4-gnutls-dev libxml2-dev curl wget htop locales \
-    openjdk-8-jdk python3-pip git vim libudunits2-dev \
+    openjdk-8-jdk python3-pip git vim libudunits2-dev zip unzip \
     grass gdal-bin libgdal-dev libgeos-dev libproj-dev proj-bin proj-data \
     libblas3 libatlas-base-dev liblapack-dev libreadline-dev gfortran \
     libx11-dev libxt-dev zlib1g-dev libbz2-dev liblzma-dev libpcre2-dev \
@@ -28,6 +28,10 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   /usr/local/TinyTex/bin/*/tlmgr path add && \
   mkdir /src && \
   cd /src && \
+  wget http://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.gz && \
+  tar -xvf texinfo-6.7.tar.gz && \
+  cd texinfo-6.7 && \
+  ./configure && make -j $cores && make install && cd .. && rm -fR texinfo * && \
   wget https://cran.r-project.org/src/base/R-$(echo $r_version | cut -d'.' -f 1)/R-${r_version}.tar.gz && \
   tar -xvf R-${r_version}.tar.gz && \
   cd /src/R-${r_version} && \
@@ -39,6 +43,7 @@ RUN  apt-get update && apt-get -y dist-upgrade && \
   echo "local({\n  r <- getOption('repos')\n  r['CRAN'] <- 'https://cloud.r-project.org'\n  options(repos = r)\n})" > /usr/local/lib/R/etc/Rprofile.site && \
   echo "\noptions('bitmapType' = 'cairo')" >> /usr/local/lib/R/etc/Rprofile.site && \
   echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" > /usr/local/lib/R/etc/Renviron.site && \
+  R CMD javareconf && \
   R -e "install.packages('renv')" && \
   wget https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-${rstudio_version}-amd64.deb && \
   gdebi --non-interactive rstudio-server-${rstudio_version}-amd64.deb && \
