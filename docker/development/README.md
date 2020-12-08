@@ -11,6 +11,7 @@ When running the container, if we wish to connect via SSH, we need to pass in ou
 ```bash
 docker run -d --rm --name development \
   -v $PWD/.ivy2:/root/.ivy2 \
+  -v $PWD/.sbt:/root/.sbt \
   -v $PWD/.cache:/root/.cache \
   -v $PWD/.npm:/root/.npm \
   -v $PWD/.vscode-server:/root/.vscode-server \

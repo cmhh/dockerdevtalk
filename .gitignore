@@ -7,4 +7,5 @@
 **/.npm
 **/registry-data
 **/.ivy2
+**/.sbt
 work.txt

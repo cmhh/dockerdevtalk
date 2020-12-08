@@ -9,7 +9,7 @@ docker build -t seasadj .
 To start the container:
 
 ```bash
-docker run -d --rm --name seasadj \
+docker run -td --rm --name seasadj \
   -p 9001:9001 \
   seasadj
 ```

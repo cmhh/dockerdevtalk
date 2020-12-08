@@ -405,36 +405,6 @@ CMD [ "app.py" ]</code></pre>
 
 			<section>
 				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
-					<h3>Databases via Containers</h3>
-				</section>
-
-				<section>
-					<code class="caption">Dockerfile</code>
-					<pre class="full-page"><code class="dockerfile" data-trim>FROM microsoft/mssql-server-linux
-WORKDIR /setup
-COPY ./setup .
-RUN chmod +x entrypoint.sh && chmod +x setup.sh
-CMD /bin/bash ./entrypoint.sh</code></pre>
-				</section>
-
-				<section>
-					<p>To build the container:</p>
-					<pre><code class=bash data-trim>docker build -t advnetureworks .</code></pre>
-					<p>To run an instance:</p>
-					<pre><code class=bash data-trim>docker run -d --rm \
-  --name adventureworks \
-  -e 'ACCEPT_EULA=Y' \
-  -e 'MSSQL_SA_PASSWORD=password-1234' \
-  -p 1433:1433 \
-  adventureworks</code></pre>
-				</section>			
-
-				<section data-background="media/dbeaver.png" data-background-size="contain">
-				</section>	
-			</section>
-
-			<section>
-				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
 					<h3>Analytics via Containers</h3>
 				</section>
 
@@ -528,6 +498,47 @@ CMD service rstudio-server start && \
 
 				<section data-background="media/rstudio02.png" data-background-size="contain">
 				</section>
+			</section>
+
+			<section>
+				<section data-background="rgb(77, 126, 101)" class="title shadow-black">
+					<h3>Databases via Containers</h3>
+				</section>
+
+				<section>
+					<code class="caption">Dockerfile</code>
+					<pre class="full-page"><code class="dockerfile" data-trim>FROM microsoft/mssql-server-linux
+WORKDIR /setup
+COPY ./setup .
+RUN chmod +x entrypoint.sh && chmod +x setup.sh
+CMD /bin/bash ./entrypoint.sh</code></pre>
+				</section>
+
+				<section>
+					<p>To build the container:</p>
+					<pre><code class=bash data-trim>docker build -t advnetureworks .</code></pre>
+					<p>To run an instance:</p>
+					<pre><code class=bash data-trim>docker run -d --rm \
+  --name adventureworks \
+  -e 'ACCEPT_EULA=Y' \
+  -e 'MSSQL_SA_PASSWORD=password-1234' \
+  -p 1433:1433 \
+  adventureworks</code></pre>
+				</section>			
+
+				<section data-background="media/dbeaver.png" data-background-size="contain">
+				</section>	
+
+				<section>
+					<p>We could even connect to this database from one of our analytical / RStudio containers.  There are better ways to go about it, but note we can figure out the local IP address of our database container via `docker inspect`:</p>
+					<pre><code class=bash data-trim>docker inspect adventureworks | grep \"IPAddress\":</code></pre>
+					<pre><code data-trim>            "IPAddress": "172.17.0.2",
+						"IPAddress": "172.17.0.2",</code></pre>
+					<p>We can then use this address from R as we would any other database.</p>
+				</section>		
+
+				<section data-background="media/radventureworks.png" data-background-size="contain">
+				</section>	
 			</section>
 
 			<section>
