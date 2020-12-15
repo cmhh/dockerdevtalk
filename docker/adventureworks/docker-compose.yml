@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  database:
+    image: adventureworks
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=password-1234
+    networks:
+      - dbnet 
+  rstudio:
+    image: rstudio:4.0.3
+    ports:
+      - 8787:8787
+    volumes:
+      - ./.local:/home/guest/.local
+      - ./work:/home/guest/work
+    networks:
+      - dbnet
+networks:
+  dbnet:

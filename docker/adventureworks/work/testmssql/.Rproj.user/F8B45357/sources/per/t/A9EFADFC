@@ -1,0 +1,26 @@
+{
+    "id": "A9EFADFC",
+    "path": "~/work/testmssql/testmssql.R",
+    "project_path": "testmssql.R",
+    "type": "r_source",
+    "hash": "3407999172",
+    "contents": "",
+    "dirty": false,
+    "created": 1608062754744.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "123,0",
+        "scrollLine": "101"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1608062817,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1608062817399,
+    "read_only": false,
+    "read_only_alternatives": []
+}
