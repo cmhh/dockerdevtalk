@@ -1,3 +1,3 @@
 #! /bin/sh
 
-./setup.sh & /opt/mssql/bin/sqlservr
+/bin/bash ./setup.sh & /opt/mssql/bin/sqlservr
