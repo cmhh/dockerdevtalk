@@ -1,7 +1,6 @@
 rJava::.jinit(parameters = "-Xmx1g")
 
 library(RJDBC)
-library(dplyr)
 
 # connect to SQL Server --------------------------------------------------------
 ip <- "database"
@@ -17,7 +16,13 @@ conn <- DBI::dbConnect(
 )
 
 # extract address table --------------------------------------------------------
-address <- tbl(conn, dbplyr::in_schema("SalesLT", "Address")) %>% collect
+address <- DBI::dbGetQuery(
+  conn, 
+  "
+  SELECT * from [SalesLT].[Address]
+  "
+)
+
 View(address)
 
 # tidy up ----------------------------------------------------------------------

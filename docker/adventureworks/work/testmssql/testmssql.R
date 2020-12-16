@@ -1,8 +1,6 @@
 rJava::.jinit(parameters = "-Xmx1g")
 
 library(RJDBC)
-if (!require(dbplyr)) renv::install("dbplyr")
-library(dplyr)
 library(data.table)
 
 # connect to SQL Server --------------------------------------------------------
