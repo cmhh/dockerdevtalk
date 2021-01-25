@@ -4,7 +4,7 @@ FROM ubuntu:$ubuntu_version
 
 ARG cores=12
 ARG r_version=4.0.3
-ARG rstudio_version=1.4.1032
+ARG rstudio_version=1.4.1103
 ENV DEBIAN_FRONTEND=noninteractive
 ENV SHELL=/bin/bash
 
